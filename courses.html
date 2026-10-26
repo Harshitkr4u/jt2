@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Directory & Executive Catalog | Global Premier Centre (GPC)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navy: {
+                        800: '#0d2540',
+                        900: '#07162b', // Deep LPC Navy Header & Base
+                        950: '#040d1a',
+                    },
+                    gold: {
+                        400: '#facc15',
+                        500: '#df9b3a', // Exact LPC Golden Yellow / Amber
+                        600: '#c88523',
+                        700: '#a36814',
+                    },
+                    lpcslate: '#f4f6f8'
+                }
+            }
+        }
+    }
+</script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif-heading { font-family: 'Playfair Display', serif; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1d3a; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b45309; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-ribbon text-gold-500"></i> ISO 9001:2015 & ISO 45001 Certified Institution</span>
+                <span class="hidden lg:flex items-center gap-2"><i class="fa-solid fa-award text-gold-500"></i> PMI Authorized Training Partner & SHRM Recertification Provider</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="tel:+442072471452" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +44 20 7247 1452</a>
+                <a href="mailto:info@gpcertification.com" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> info@gpcertification.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
+    <header class="bg-navy-900 text-white sticky top-0 z-40 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center shadow-lg text-navy-950 font-black text-2xl tracking-wider">
+                        GPC
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-tight tracking-wide text-white">GLOBAL PREMIER</span>
+                        <span class="text-xs text-gold-400 tracking-widest font-semibold">CENTRE FOR EXECUTIVE EDUCATION</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                 <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="index.html" class="text-slate-300 hover:text-gold-400 transition-colors">Home</a>
+                    <a href="courses.html" class="text-slate-300 hover:text-gold-400 transition-colors">Courses</a>
+                    <a href="cities.html" class="text-slate-300 hover:text-gold-400 transition-colors">Training Centers</a>
+                    <a href="about.html" class="text-slate-300 hover:text-gold-400 transition-colors">About</a>
+                    <a href="my-blog/dist/blog.html">Blog</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-gold-400 transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="courses.html" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-md transition-all">
+                        Inquire Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-300 hover:text-gold-400">Home</a>
+            <a href="courses.html" class="block py-2 text-slate-300 hover:text-gold-400">Courses</a>
+            <a href="cities.html" class="block py-2 text-slate-300 hover:text-gold-400">Destinations</a>
+            <a href="about.html" class="block py-2 text-slate-300 hover:text-gold-400">About</a>
+            <a href="contact.html" class="block py-2 text-slate-300 hover:text-gold-400">Contact Us</a>
+        </div>
+    </header>
+    <!-- PAGE HEADER / HERO BREADCRUMB -->
+    <section class="bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 text-white py-12 border-b border-navy-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-xs text-slate-400 mb-4">
+                <a href="index.html" class="hover:text-gold-400 transition">Home</a>
+                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                <span class="text-gold-400 font-medium">Executive Course Directory</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif-heading text-white leading-tight">
+                        Executive Training Directory & <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-amber-300">Short Courses</span>
+                    </h1>
+                    <p class="mt-3 text-slate-300 text-sm sm:text-base max-w-2xl font-light">
+                        Explore over 500 accredited short-courses, masterclasses, and executive certification programs running in 12 major international financial hubs.
+                    </p>
+                </div>
+
+                <!-- QUICK HERO SEARCH BAR -->
+                <div class="lg:col-span-5 bg-navy-950/80 p-5 rounded-2xl border border-navy-700 shadow-2xl backdrop-blur-md">
+                    <label class="block text-xs font-semibold text-gold-400 uppercase tracking-wider mb-2">Instant Search Directory</label>
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="heroSearchInput" oninput="syncAndFilter(this.value)" placeholder="e.g. Financial Strategy, FIDIC, HR Analytics..." class="w-full pl-11 pr-10 py-3 bg-navy-900 border border-navy-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-gold-500 text-sm">
+                        <button id="heroClearBtn" onclick="clearHeroSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1">
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS TICKER BAR -->
+            <div class="mt-10 pt-6 border-t border-navy-800/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="flex items-center justify-center gap-3 bg-navy-950/40 p-3 rounded-xl border border-navy-800">
+                    <i class="fa-solid fa-book-open text-2xl text-gold-400"></i>
+                    <div class="text-left">
+                        <p class="text-lg font-bold text-white font-serif-heading leading-none">500+</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Specialized Courses</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 bg-navy-950/40 p-3 rounded-xl border border-navy-800">
+                    <i class="fa-solid fa-earth-americas text-2xl text-gold-400"></i>
+                    <div class="text-left">
+                        <p class="text-lg font-bold text-white font-serif-heading leading-none">12</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Global Destinations</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 bg-navy-950/40 p-3 rounded-xl border border-navy-800">
+                    <i class="fa-solid fa-award text-2xl text-gold-400"></i>
+                    <div class="text-left">
+                        <p class="text-lg font-bold text-white font-serif-heading leading-none">100%</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Accredited Programs</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center gap-3 bg-navy-950/40 p-3 rounded-xl border border-navy-800">
+                    <i class="fa-solid fa-user-graduate text-2xl text-gold-400"></i>
+                    <div class="text-left">
+                        <p class="text-lg font-bold text-white font-serif-heading leading-none">25,000+</p>
+                        <p class="text-[11px] text-slate-400 mt-0.5">Executive Alumni</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TWO-COLUMN LAYOUT (SIDEBAR + MAIN GRID) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
+        
+        <!-- MOBILE FILTER TOGGLE BUTTON -->
+        <div class="lg:hidden mb-6 flex justify-between items-center bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="text-sm font-bold text-navy-900 flex items-center gap-2">
+                <i class="fa-solid fa-filter text-gold-600"></i> Filter & Refine Options
+            </span>
+            <button onclick="toggleMobileFilterDrawer()" class="px-4 py-2 bg-navy-900 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5">
+                <span>Refine Filters</span>
+                <i class="fa-solid fa-sliders"></i>
+            </button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- LEFT SIDEBAR FILTER PANEL -->
+            <aside id="sidebarDrawer" class="lg:col-span-4 xl:col-span-3 space-y-6 hidden lg:block">
+                <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-sm sticky top-28">
+                    
+                    <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+                        <h3 class="font-bold text-navy-900 text-base flex items-center gap-2">
+                            <i class="fa-solid fa-sliders text-gold-600"></i> Filter Courses
+                        </h3>
+                        <button onclick="resetAllFilters()" class="text-xs text-gold-600 hover:text-gold-700 font-semibold underline">
+                            Reset All
+                        </button>
+                    </div>
+
+                    <!-- SEARCH INPUT -->
+                    <div class="py-4 border-b border-slate-100">
+                        <label class="block text-xs font-semibold text-slate-700 mb-2">Search Title or Keyword</label>
+                        <div class="relative">
+                            <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                            <input type="text" id="sidebarSearchInput" oninput="syncAndFilter(this.value)" placeholder="Search keyword..." class="w-full pl-9 pr-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs focus:outline-none focus:border-navy-900">
+                        </div>
+                    </div>
+
+                    <!-- DOMAINS / CATEGORY FILTER CHECKLIST -->
+                    <div class="py-4 border-b border-slate-100">
+                        <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-3">Course Domains</label>
+                        <div class="space-y-2 max-h-56 overflow-y-auto pr-1">
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Accounting" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Accounting & Finance
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">183</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Management" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Management & Leadership
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">181</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Human Resources" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Human Resources & Talent
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">78</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Oil" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Oil, Gas & Energy Transition
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">71</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Legal" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Legal, Contracts & Procurement
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">64</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="IT" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    IT, Cyber Security & Computer
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">54</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Project" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Project Management & Ops
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">45</span>
+                            </label>
+                            <label class="flex items-center justify-between text-xs text-slate-700 hover:text-navy-900 cursor-pointer">
+                                <span class="flex items-center gap-2">
+                                    <input type="checkbox" value="Public" onchange="applyFilters()" class="category-checkbox rounded text-navy-900 focus:ring-gold-500 h-4 w-4">
+                                    Public Sector & Governance
+                                </span>
+                                <span class="text-[11px] bg-slate-100 px-2 py-0.5 rounded text-slate-500 font-medium">38</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- DESTINATION / HUB FILTER -->
+                    <div class="py-4 border-b border-slate-100">
+                        <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-3">Training Destination</label>
+                        <div class="grid grid-cols-2 gap-2 text-xs">
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="London" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> London
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Dubai" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Dubai
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Riyadh" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Riyadh
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Paris" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Paris
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Singapore" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Singapore
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Istanbul" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Istanbul
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Amsterdam" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Amsterdam
+                            </label>
+                            <label class="flex items-center gap-1.5 cursor-pointer text-slate-700">
+                                <input type="checkbox" value="Kuala Lumpur" onchange="applyFilters()" class="location-checkbox rounded text-navy-900 focus:ring-gold-500 h-3.5 w-3.5"> Kuala Lumpur
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- DURATION FILTER -->
+                    <div class="py-4 border-b border-slate-100">
+                        <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Duration</label>
+                        <select id="durationSelect" onchange="applyFilters()" class="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                            <option value="">All Durations</option>
+                            <option value="5 Days">5-Day Intensive Masterclass</option>
+                            <option value="10 Days">10-Day Advanced Diploma</option>
+                            <option value="2 Weeks">2-Week Executive Certification</option>
+                        </select>
+                    </div>
+
+                    <!-- DELIVERY MODE FILTER -->
+                    <div class="py-4 border-b border-slate-100">
+                        <label class="block text-xs font-bold text-navy-900 uppercase tracking-wider mb-2">Delivery Mode</label>
+                        <div class="space-y-1.5 text-xs text-slate-700">
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="deliveryMode" value="" checked onchange="applyFilters()" class="text-navy-900"> All Modes
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="deliveryMode" value="In-Person" onchange="applyFilters()" class="text-navy-900"> Classroom / In-Person
+                            </label>
+                            <label class="flex items-center gap-2 cursor-pointer">
+                                <input type="radio" name="deliveryMode" value="Virtual" onchange="applyFilters()" class="text-navy-900"> Live Online Virtual
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- RESET BUTTON -->
+                    <div class="pt-4">
+                        <button onclick="resetAllFilters()" class="w-full py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-lg text-xs transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-rotate-right"></i> Clear All Selected Filters
+                        </button>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- RIGHT MAIN CONTENT AREA -->
+            <main class="lg:col-span-8 xl:col-span-9 space-y-6">
+
+                <!-- ACTIVE FILTER TAGS PILLS BAR -->
+                <div id="activeTagsContainer" class="hidden bg-amber-50 border border-amber-200 p-3 rounded-xl flex-wrap items-center gap-2 text-xs">
+                    <span class="font-bold text-amber-900 mr-1"><i class="fa-solid fa-tags text-gold-600"></i> Active Filters:</span>
+                    <div id="activeTagsList" class="flex flex-wrap items-center gap-2"></div>
+                </div>
+
+                <!-- RESULTS TOP BAR (Count, Sorting, View Toggle) -->
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-center gap-4">
+                    <div>
+                        <p class="text-sm font-bold text-navy-900" id="resultsCount">Displaying 15 of 15 Courses</p>
+                        <p class="text-xs text-slate-500">Showing accredited short courses for 2026/2027</p>
+                    </div>
+
+                    <div class="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                        <!-- SORT DROPDOWN -->
+                        <div class="flex items-center gap-2 text-xs">
+                            <label class="text-slate-500 font-medium whitespace-nowrap">Sort By:</label>
+                            <select id="sortSelect" onchange="applyFilters()" class="px-3 py-1.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900 cursor-pointer">
+                                <option value="date">Upcoming Date</option>
+                                <option value="popular">Popularity / Rating</option>
+                                <option value="title">Course Title (A-Z)</option>
+                                <option value="fee">Tuition Fee (Low to High)</option>
+                            </select>
+                        </div>
+
+                        <!-- VIEW SWITCHER (GRID VS LIST) -->
+                        <div class="flex items-center bg-slate-100 p-1 rounded-lg border border-slate-200">
+                            <button id="btnGridView" onclick="switchView('grid')" class="p-1.5 px-2.5 rounded text-xs font-semibold bg-white text-navy-900 shadow-sm" title="Grid View">
+                                <i class="fa-solid fa-border-all"></i>
+                            </button>
+                            <button id="btnListView" onclick="switchView('list')" class="p-1.5 px-2.5 rounded text-xs font-semibold text-slate-500 hover:text-navy-900" title="Table / List View">
+                                <i class="fa-solid fa-list-ul"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC COURSES CONTAINER -->
+                <div id="courseContainer" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                    <!-- Dynamic rendering via JavaScript -->
+                </div>
+
+                <!-- EMPTY RESULTS PLACEHOLDER -->
+                <div id="noResults" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="w-16 h-16 bg-amber-100 text-gold-600 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl">
+                        <i class="fa-solid fa-magnifying-glass-slash"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-900">No matching executive courses found</h3>
+                    <p class="text-slate-500 text-xs mt-1 max-w-sm mx-auto">We couldn't find any courses matching your specific filter criteria. Try adjusting your search term or clearing location filters.</p>
+                    <button onclick="resetAllFilters()" class="mt-5 px-5 py-2.5 bg-navy-900 text-white rounded-lg text-xs font-bold hover:bg-navy-800 transition shadow">
+                        Reset All Filters
+                    </button>
+                </div>
+
+                <!-- PAGINATION CONTROLS -->
+                <div id="paginationBar" class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm flex items-center justify-between text-xs">
+                    <span class="text-slate-500">Page 1 of 1</span>
+                    <div class="flex gap-1.5">
+                        <button class="px-3 py-1.5 rounded-md border border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed" disabled>Previous</button>
+                        <button class="px-3 py-1.5 rounded-md bg-navy-900 text-white font-bold">1</button>
+                        <button class="px-3 py-1.5 rounded-md border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-200">2</button>
+                        <button class="px-3 py-1.5 rounded-md border border-slate-200 bg-slate-50 text-slate-700 hover:bg-slate-200">Next</button>
+                    </div>
+                </div>
+
+                <!-- CAN'T FIND TOPIC BANNER -->
+                <div class="bg-gradient-to-r from-navy-900 via-navy-800 to-navy-950 text-white p-6 sm:p-8 rounded-2xl border border-navy-700 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <span class="bg-gold-500 text-navy-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded uppercase tracking-wider">Tailored Capability</span>
+                        <h3 class="text-xl font-bold font-serif-heading text-white mt-1">Can't find your required topic or preferred dates?</h3>
+                        <p class="text-slate-300 text-xs mt-1 max-w-xl">
+                            We customize all short courses for in-house execution at your corporate premises or arrange private group sessions in any global city.
+                        </p>
+                    </div>
+                    <button onclick="openModal('Custom In-House Inquiry')" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-6 py-3 rounded-xl text-xs transition shadow-lg whitespace-nowrap">
+                        Request In-House Quote
+                    </button>
+                </div>
+
+            </main>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-300 pt-16 pb-8 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gold-500 text-navy-950 rounded flex items-center justify-center font-bold text-xl">GPC</div>
+                        <span class="text-lg font-bold text-white font-serif-heading">Global Premier Centre</span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
+                        Global Premier Centre (GPC) is a premier international provider of executive education, corporate training, and organizational capacity development.
+                    </p>
+                    <div class="text-xs text-slate-400 space-y-1.5">
+                        <p><strong class="text-slate-200"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> London HQ:</strong> Mayfair Square, London W1S 1JH, UK</p>
+                        <p><strong class="text-slate-200"><i class="fa-solid fa-phone text-gold-500 mr-1"></i> Global Desk:</strong> +44 20 7123 4567 | +971 4 390 0000</p>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Quick Directory</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-gold-400 transition">Home Page</a></li>
+                        <li><a href="courses.html" class="hover:text-gold-400 transition">All Short Courses</a></li>
+                        <li><a href="index.html#destinations" class="hover:text-gold-400 transition">Training Hubs</a></li>
+                        <li><a href="index.html#consulting" class="hover:text-gold-400 transition">Corporate Consulting</a></li>
+                        <li><a href="index.html#accreditations" class="hover:text-gold-400 transition">Accreditations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Popular Hubs -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Key Hubs</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" onclick="quickLocationFilter('London')" class="hover:text-gold-400 transition"><i class="fa-solid fa-angle-right text-gold-500 text-[10px] mr-1"></i> London, UK</a></li>
+                        <li><a href="#" onclick="quickLocationFilter('Dubai')" class="hover:text-gold-400 transition"><i class="fa-solid fa-angle-right text-gold-500 text-[10px] mr-1"></i> Dubai, UAE</a></li>
+                        <li><a href="#" onclick="quickLocationFilter('Riyadh')" class="hover:text-gold-400 transition"><i class="fa-solid fa-angle-right text-gold-500 text-[10px] mr-1"></i> Riyadh, KSA</a></li>
+                        <li><a href="#" onclick="quickLocationFilter('Paris')" class="hover:text-gold-400 transition"><i class="fa-solid fa-angle-right text-gold-500 text-[10px] mr-1"></i> Paris, France</a></li>
+                        <li><a href="#" onclick="quickLocationFilter('Singapore')" class="hover:text-gold-400 transition"><i class="fa-solid fa-angle-right text-gold-500 text-[10px] mr-1"></i> Singapore</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Course Calendar</h4>
+                    <p class="text-xs text-slate-400 mb-3">Download the complete 2026/2027 Executive Learning Plan PDF.</p>
+                    <button onclick="triggerBrochureModal()" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-2.5 rounded text-xs transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-pdf"></i> Download Calendar
+                    </button>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT BAR -->
+            <div class="pt-8 border-t border-navy-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Global Premier Centre (GPC) Executive Development.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400">CPD Accreditation Info</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE COURSE OUTLINE / DETAIL MODAL -->
+    <div id="courseDetailModal" class="fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 flex flex-col">
+            <!-- Modal Header -->
+            <div class="bg-navy-900 text-white p-6 rounded-t-2xl flex justify-between items-start sticky top-0 z-10">
+                <div>
+                    <span id="detailBadge" class="bg-gold-500 text-navy-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded uppercase">DOMAIN</span>
+                    <h3 id="detailTitle" class="text-xl font-bold font-serif-heading text-white mt-1">Course Title Placeholder</h3>
+                    <p id="detailSub" class="text-xs text-slate-300 mt-1">Code: FIN-101 | Duration: 5 Days | CPD: 30 Credits</p>
+                </div>
+                <button onclick="closeCourseDetailModal()" class="text-slate-400 hover:text-white text-xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="p-6 space-y-6 flex-1">
+                <!-- Logistics Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs">
+                    <div>
+                        <span class="text-slate-400 block font-medium">Location</span>
+                        <strong id="detailLocation" class="text-navy-900 font-bold">London</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block font-medium">Next Date</span>
+                        <strong id="detailDate" class="text-navy-900 font-bold">Nov 12-16, 2026</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block font-medium">Tuition Fee</span>
+                        <strong id="detailFee" class="text-gold-600 font-extrabold">$4,950</strong>
+                    </div>
+                    <div>
+                        <span class="text-slate-400 block font-medium">Venue Level</span>
+                        <strong class="text-navy-900 font-bold">5-Star Executive Hub</strong>
+                    </div>
+                </div>
+
+                <!-- Key Learning Modules -->
+                <div>
+                    <h4 class="font-bold text-navy-900 text-sm mb-2 uppercase tracking-wider text-gold-600">Executive Learning Outcomes</h4>
+                    <p id="detailDesc" class="text-xs text-slate-600 leading-relaxed">Detailed synopsis of learning goals...</p>
+                    <ul id="detailModules" class="mt-3 space-y-2 text-xs text-slate-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-gold-500 mt-0.5"></i> Comprehensive mastery of strategic governance and executive leadership principles.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-gold-500 mt-0.5"></i> Practical evaluation using real-world corporate case studies and workshop dynamics.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-gold-500 mt-0.5"></i> Quantitative decision-making metrics aligned with international statutory standards.</li>
+                    </ul>
+                </div>
+
+                <!-- Target Audience -->
+                <div>
+                    <h4 class="font-bold text-navy-900 text-sm mb-1 uppercase tracking-wider text-gold-600">Target Audience</h4>
+                    <p id="detailAudience" class="text-xs text-slate-600">Directors, Department Heads, Senior Managers, Controllers, and Strategic Advisors.</p>
+                </div>
+
+                <!-- Accreditation Tags -->
+                <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
+                    <span class="text-slate-500">Accredited by ISO 9001:2015 & CPD Standards</span>
+                    <button onclick="downloadSyllabusPDF()" class="text-navy-900 hover:text-gold-600 font-bold flex items-center gap-1.5 underline">
+                        <i class="fa-solid fa-file-pdf text-red-600"></i> Download Full Syllabus (PDF)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="bg-slate-50 p-4 rounded-b-2xl border-t border-slate-200 flex justify-between items-center">
+                <button onclick="closeCourseDetailModal()" class="px-4 py-2 border border-slate-300 rounded-lg text-xs font-semibold text-slate-700 hover:bg-slate-100">
+                    Close Preview
+                </button>
+                <button id="btnModalRegister" onclick="" class="px-6 py-2.5 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold rounded-lg text-xs shadow-md">
+                    Proceed to Registration
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- QUICK REGISTRATION / INQUIRY MODAL -->
+    <div id="modalOverlay" class="fixed inset-0 bg-navy-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <div class="bg-navy-900 text-white p-6 rounded-t-2xl flex justify-between items-center">
+                <div>
+                    <h3 id="modalTitle" class="text-lg font-bold font-serif-heading">Course Registration & Inquiry</h3>
+                    <p class="text-xs text-slate-300 mt-0.5">Global Premier Centre Executive Admissions</p>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <form onsubmit="handleRegistrationSubmit(event)" class="p-6 space-y-4">
+                <input type="hidden" id="selectedCourseTitle" name="course_title">
+                
+                <div id="courseInfoBanner" class="bg-amber-50 border border-amber-200 p-3 rounded-xl hidden">
+                    <p class="text-xs font-bold text-amber-900" id="selectedCourseName">Selected Course</p>
+                    <p class="text-[11px] text-amber-800" id="selectedCourseDetails">Location & Date details</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                        <input type="text" required placeholder="e.g. Executive Delegate" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
+                        <input type="email" required placeholder="delegate@company.com" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number (with Country Code) *</label>
+                        <input type="tel" required placeholder="+44 7000 000000" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Organization / Sponsor</label>
+                        <input type="text" placeholder="Ministry / Energy Corp" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred City Destination</label>
+                        <select id="modalCitySelect" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                            <option>London (UK)</option>
+                            <option>Dubai (UAE)</option>
+                            <option>Riyadh (KSA)</option>
+                            <option>Paris (France)</option>
+                            <option>Singapore</option>
+                            <option>Istanbul</option>
+                            <option>In-House Corporate Site</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Delegates Count</label>
+                        <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900">
+                            <option>1 Delegate</option>
+                            <option>2 - 4 Delegates</option>
+                            <option>5+ Delegates (Group Rate)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Special Requirements / Inquiry</label>
+                    <textarea rows="2" placeholder="Mention visa invitation letter, accommodation assistance, or specific goals..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-xs text-slate-800 focus:outline-none focus:border-navy-900"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold rounded-xl text-xs transition shadow-md">
+                        Submit Official Registration Request
+                    </button>
+                    <p class="text-[11px] text-slate-400 text-center mt-2">No payment required today. Formal invoice and confirmation package will be sent via email.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-navy-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-gold-500/40 hidden z-50 items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <div>
+            <p id="toastText" class="text-xs font-semibold">Action completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Central Shared Form Submission Processor
+function recordInquiryToAdmin(inquiryData) {
+    const existing = JSON.parse(localStorage.getItem('gpc_admin_inquiries') || '[]');
+    const now = new Date();
+    const formattedTime = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+    
+    const newEntry = {
+        id: 'inq_' + Date.now(),
+        type: inquiryData.type || 'General Inquiry',
+        name: inquiryData.name || 'Anonymous Delegate',
+        email: inquiryData.email || 'N/A',
+        phone: inquiryData.phone || 'N/A',
+        org: inquiryData.org || 'Independent',
+        city: inquiryData.city || 'Not Specified',
+        course: inquiryData.course || '',
+        details: inquiryData.details || '',
+        time: formattedTime
+    };
+
+    existing.unshift(newEntry);
+    localStorage.setItem('gpc_admin_inquiries', JSON.stringify(existing));
+}
+        // MASTER COURSES DATASET (15 COMPREHENSIVE COURSES)
+// Connected to Admin LocalStorage Database
+const defaultCatalog = [
+    { id: 'c1', code: 'FIN-402', title: 'Advanced Financial Analysis, Budgeting & Forecasting', category: 'Accounting', location: 'London', delivery: 'In-Person', duration: '5 Days', cpd: '30 CPD Credits', dates: 'Nov 10 - 14, 2026', fee: '$4,950', feeNum: 4950, rating: 4.9, desc: 'Comprehensive financial modeling, variance analysis, risk assessment, and modern capital budgeting techniques.', audience: 'CFOs, Finance Directors, Senior Accountants, and Financial Analysts.' },
+    { id: 'c2', code: 'MGT-801', title: 'Executive Leadership, Governance & Strategic Management', category: 'Management', location: 'Dubai', delivery: 'In-Person', duration: '5 Days', cpd: '30 CPD Credits', dates: 'Nov 24 - 28, 2026', fee: '$4,800', feeNum: 4800, rating: 4.8, desc: 'Strategic decision-making frameworks, executive presence, corporate governance, and digital transformation.', audience: 'C-Suite Executives, Managing Directors, and Department Heads.' }
+];
+
+function getActiveCourses() {
+    const saved = localStorage.getItem('gpc_admin_courses');
+    if (!saved) return defaultCatalog;
+    const parsed = JSON.parse(saved);
+    // Map admin items to match catalog format cleanly
+    return parsed.map((item, idx) => ({
+        id: item.id || 'c_' + idx,
+        code: 'GPC-' + (100 + idx),
+        title: item.title,
+        category: item.category,
+        location: item.location,
+        delivery: 'In-Person',
+        duration: item.duration || '5 Days',
+        cpd: item.cpd || '30 CPD Credits',
+        dates: item.dates,
+        fee: item.fee,
+        feeNum: parseInt(item.fee.replace(/[^0-9]/g, '')) || 4950,
+        rating: 4.9,
+        desc: item.desc,
+        audience: 'Senior Professionals & Corporate Leaders.'
+    }));
+}
+
+let masterCourses = getActiveCourses();
+
+        // GLOBAL FILTER STATE
+        let currentViewMode = 'grid'; // 'grid' or 'list'
+        let searchTerm = '';
+
+        // INITIALIZE ON WINDOW LOAD
+        window.onload = function() {
+            applyFilters();
+        };
+
+        // SYNC SEARCH INPUTS
+        function syncAndFilter(val) {
+            searchTerm = val.toLowerCase();
+            document.getElementById('heroSearchInput').value = val;
+            document.getElementById('sidebarSearchInput').value = val;
+
+            const clearBtn = document.getElementById('heroClearBtn');
+            if (val.trim().length > 0) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+
+            applyFilters();
+        }
+
+        function clearHeroSearch() {
+            syncAndFilter('');
+        }
+
+        // APPLY MULTI-FACETED FILTERS
+        function applyFilters() {
+            // Get selected categories
+            const selectedCategories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+            
+            // Get selected locations
+            const selectedLocations = Array.from(document.querySelectorAll('.location-checkbox:checked')).map(cb => cb.value);
+
+            // Get selected duration
+            const selectedDuration = document.getElementById('durationSelect').value;
+
+            // Get delivery mode
+            const selectedDelivery = document.querySelector('input[name="deliveryMode"]:checked').value;
+
+            // Get sort order
+            const sortBy = document.getElementById('sortSelect').value;
+
+            // Filter logic
+            let filtered = masterCourses.filter(course => {
+                const matchesSearch = searchTerm === '' || 
+                    course.title.toLowerCase().includes(searchTerm) || 
+                    course.code.toLowerCase().includes(searchTerm) || 
+                    course.desc.toLowerCase().includes(searchTerm) ||
+                    course.category.toLowerCase().includes(searchTerm);
+
+                const matchesCategory = selectedCategories.length === 0 || selectedCategories.some(cat => course.category.toLowerCase().includes(cat.toLowerCase()));
+
+                const matchesLocation = selectedLocations.length === 0 || selectedLocations.some(loc => course.location.toLowerCase() === loc.toLowerCase());
+
+                const matchesDuration = selectedDuration === '' || course.duration === selectedDuration;
+
+                const matchesDelivery = selectedDelivery === '' || course.delivery === selectedDelivery;
+
+                return matchesSearch && matchesCategory && matchesLocation && matchesDuration && matchesDelivery;
+            });
+
+            // Sorting logic
+            if (sortBy === 'popular') {
+                filtered.sort((a, b) => b.rating - a.rating);
+            } else if (sortBy === 'title') {
+                filtered.sort((a, b) => a.title.localeCompare(b.title));
+            } else if (sortBy === 'fee') {
+                filtered.sort((a, b) => a.feeNum - b.feeNum);
+            }
+            // Default: 'date' maintains dataset sequence
+
+            // Update UI
+            updateActiveTags(selectedCategories, selectedLocations, selectedDuration, selectedDelivery);
+            renderCourses(filtered);
+            updateResultCounts(filtered.length);
+        }
+
+        // UPDATE ACTIVE FILTER TAGS PILLS
+        function updateActiveTags(categories, locations, duration, delivery) {
+            const container = document.getElementById('activeTagsContainer');
+            const list = document.getElementById('activeTagsList');
+            list.innerHTML = '';
+
+            let hasActive = false;
+
+            if (searchTerm !== '') {
+                hasActive = true;
+                list.appendChild(createTagPill(`Search: "${searchTerm}"`, () => syncAndFilter('')));
+            }
+
+            categories.forEach(cat => {
+                hasActive = true;
+                list.appendChild(createTagPill(`Domain: ${cat}`, () => {
+                    const cb = document.querySelector(`.category-checkbox[value="${cat}"]`);
+                    if(cb) cb.checked = false;
+                    applyFilters();
+                }));
+            });
+
+            locations.forEach(loc => {
+                hasActive = true;
+                list.appendChild(createTagPill(`City: ${loc}`, () => {
+                    const cb = document.querySelector(`.location-checkbox[value="${loc}"]`);
+                    if(cb) cb.checked = false;
+                    applyFilters();
+                }));
+            });
+
+            if (duration !== '') {
+                hasActive = true;
+                list.appendChild(createTagPill(`Duration: ${duration}`, () => {
+                    document.getElementById('durationSelect').value = '';
+                    applyFilters();
+                }));
+            }
+
+            if (delivery !== '') {
+                hasActive = true;
+                list.appendChild(createTagPill(`Mode: ${delivery}`, () => {
+                    document.querySelector('input[name="deliveryMode"][value=""]').checked = true;
+                    applyFilters();
+                }));
+            }
+
+            if (hasActive) {
+                container.classList.remove('hidden');
+                container.classList.add('flex');
+            } else {
+                container.classList.add('hidden');
+                container.classList.remove('flex');
+            }
+        }
+
+        function createTagPill(label, onRemove) {
+            const pill = document.createElement('span');
+            pill.className = 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-navy-900 text-white text-[11px] font-semibold shadow-sm';
+            pill.innerHTML = `${label} <i class="fa-solid fa-xmark text-gold-400 cursor-pointer ml-1 hover:text-white"></i>`;
+            pill.querySelector('i').onclick = onRemove;
+            return pill;
+        }
+
+        // RENDER COURSE CARDS (GRID VS LIST)
+        function renderCourses(courses) {
+            const container = document.getElementById('courseContainer');
+            const noResults = document.getElementById('noResults');
+            const paginationBar = document.getElementById('paginationBar');
+
+            if (!courses || courses.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.remove('hidden');
+                paginationBar.classList.add('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            paginationBar.classList.remove('hidden');
+
+            if (currentViewMode === 'grid') {
+                container.className = 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6';
+                container.innerHTML = courses.map(course => `
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-navy-950 text-gold-400 tracking-wider">
+                                        ${course.code}
+                                    </span>
+                                    <span class="text-[11px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-700 uppercase">
+                                        ${course.category}
+                                    </span>
+                                </div>
+                                <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                                    <i class="fa-solid fa-star text-amber-400"></i> ${course.rating}
+                                </span>
+                            </div>
+
+                            <h3 class="font-bold text-navy-900 text-base leading-snug group-hover:text-gold-600 transition-colors mb-2">
+                                ${course.title}
+                            </h3>
+
+                            <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">
+                                ${course.desc}
+                            </p>
+
+                            <div class="space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-500"></i> <strong>Location:</strong> ${course.location}</span>
+                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-gold-500"></i> <strong>Duration:</strong> ${course.duration}</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-calendar-days text-gold-500"></i> <strong>Dates:</strong> ${course.dates}</span>
+                                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-gold-500"></i> ${course.cpd}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-[10px] text-slate-400 block uppercase font-medium">Tuition Fee</span>
+                                <span class="text-base font-extrabold text-navy-900">${course.fee}</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openCourseDetailModal('${course.id}')" class="bg-slate-200 hover:bg-slate-300 text-slate-800 text-xs font-bold px-3 py-2 rounded-lg transition">
+                                    Outline
+                                </button>
+                                <button onclick="openModal('Register: ${course.title}', ${JSON.stringify(course).replace(/"/g, '&quot;')})" class="bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                // LIST / TABLE VIEW
+                container.className = 'space-y-4';
+                container.innerHTML = courses.map(course => `
+                    <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm hover:shadow-md transition flex flex-col md:flex-row justify-between md:items-center gap-4">
+                        <div class="flex-1 space-y-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-extrabold px-2 py-0.5 rounded bg-navy-950 text-gold-400">${course.code}</span>
+                                <span class="text-xs font-bold text-gold-600 uppercase">${course.category}</span>
+                                <span class="text-xs text-slate-400">|</span>
+                                <span class="text-xs font-semibold text-slate-600"><i class="fa-solid fa-location-dot text-gold-500"></i> ${course.location}</span>
+                                <span class="text-xs text-slate-400">|</span>
+                                <span class="text-xs font-semibold text-slate-600"><i class="fa-solid fa-clock text-gold-500"></i> ${course.duration}</span>
+                            </div>
+                            <h3 class="font-bold text-navy-900 text-base hover:text-gold-600 transition cursor-pointer" onclick="openCourseDetailModal('${course.id}')">
+                                ${course.title}
+                            </h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">${course.desc}</p>
+                        </div>
+
+                        <div class="flex items-center justify-between md:justify-end gap-6 border-t md:border-t-0 pt-3 md:pt-0 border-slate-100">
+                            <div class="text-left md:text-right">
+                                <span class="text-xs font-bold text-navy-900 block">${course.dates}</span>
+                                <span class="text-sm font-extrabold text-gold-600 block">${course.fee}</span>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openCourseDetailModal('${course.id}')" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-bold px-3 py-2 rounded-lg transition">
+                                    Details
+                                </button>
+                                <button onclick="openModal('Register: ${course.title}', ${JSON.stringify(course).replace(/"/g, '&quot;')})" class="bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-white text-xs font-bold px-4 py-2 rounded-lg transition">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function updateResultCounts(count) {
+            document.getElementById('resultsCount').innerText = `Displaying ${count} of ${masterCourses.length} Courses`;
+        }
+
+        // VIEW SWITCHER
+        function switchView(mode) {
+            currentViewMode = mode;
+            const btnGrid = document.getElementById('btnGridView');
+            const btnList = document.getElementById('btnListView');
+
+            if (mode === 'grid') {
+                btnGrid.className = 'p-1.5 px-2.5 rounded text-xs font-semibold bg-white text-navy-900 shadow-sm';
+                btnList.className = 'p-1.5 px-2.5 rounded text-xs font-semibold text-slate-500 hover:text-navy-900';
+            } else {
+                btnList.className = 'p-1.5 px-2.5 rounded text-xs font-semibold bg-white text-navy-900 shadow-sm';
+                btnGrid.className = 'p-1.5 px-2.5 rounded text-xs font-semibold text-slate-500 hover:text-navy-900';
+            }
+
+            applyFilters();
+        }
+
+        // QUICK LOCATION FILTER FROM FOOTER
+        function quickLocationFilter(loc) {
+            resetAllFilters();
+            const checkbox = document.querySelector(`.location-checkbox[value="${loc}"]`);
+            if (checkbox) checkbox.checked = true;
+            applyFilters();
+            window.scrollTo({ top: 400, behavior: 'smooth' });
+        }
+
+        // RESET ALL FILTERS
+        function resetAllFilters() {
+            searchTerm = '';
+            document.getElementById('heroSearchInput').value = '';
+            document.getElementById('sidebarSearchInput').value = '';
+            document.getElementById('heroClearBtn').classList.add('hidden');
+
+            document.querySelectorAll('.category-checkbox').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.location-checkbox').forEach(cb => cb.checked = false);
+
+            document.getElementById('durationSelect').value = '';
+            document.querySelector('input[name="deliveryMode"][value=""]').checked = true;
+            document.getElementById('sortSelect').value = 'date';
+
+            applyFilters();
+        }
+
+        // MOBILE DRAWER MENU TOGGLE
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // MOBILE FILTER DRAWER TOGGLE
+        function toggleMobileFilterDrawer() {
+            const drawer = document.getElementById('sidebarDrawer');
+            drawer.classList.toggle('hidden');
+            if (!drawer.classList.contains('hidden')) {
+                drawer.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // MODAL HANDLERS
+        function openModal(title, course = null) {
+            document.getElementById('modalTitle').innerText = title || 'Course Registration & Inquiry';
+            const overlay = document.getElementById('modalOverlay');
+            const infoBanner = document.getElementById('courseInfoBanner');
+
+            if (course) {
+                infoBanner.classList.remove('hidden');
+                document.getElementById('selectedCourseName').innerText = `${course.code}: ${course.title}`;
+                document.getElementById('selectedCourseDetails').innerText = `Location: ${course.location} | Date: ${course.dates} | Tuition: ${course.fee}`;
+                document.getElementById('selectedCourseTitle').value = course.title;
+                document.getElementById('modalCitySelect').value = course.location;
+            } else {
+                infoBanner.classList.add('hidden');
+                document.getElementById('selectedCourseTitle').value = '';
+            }
+
+            overlay.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.add('hidden');
+        }
+
+        // COURSE DETAIL / OUTLINE MODAL
+        function openCourseDetailModal(courseId) {
+            const course = masterCourses.find(c => c.id === courseId);
+            if (!course) return;
+
+            document.getElementById('detailBadge').innerText = course.category;
+            document.getElementById('detailTitle').innerText = course.title;
+            document.getElementById('detailSub').innerText = `Code: ${course.code} | Duration: ${course.duration} | ${course.cpd}`;
+            document.getElementById('detailLocation').innerText = course.location;
+            document.getElementById('detailDate').innerText = course.dates;
+            document.getElementById('detailFee').innerText = course.fee;
+            document.getElementById('detailDesc').innerText = course.desc;
+            document.getElementById('detailAudience').innerText = course.audience;
+
+            const btnRegister = document.getElementById('btnModalRegister');
+            btnRegister.onclick = function() {
+                closeCourseDetailModal();
+                openModal(`Register: ${course.title}`, course);
+            };
+
+            document.getElementById('courseDetailModal').classList.remove('hidden');
+        }
+
+        function closeCourseDetailModal() {
+            document.getElementById('courseDetailModal').classList.add('hidden');
+        }
+
+        // DOWNLOAD PDF MOCK HANDLER
+        function downloadSyllabusPDF() {
+            showToast("Downloading course syllabus PDF prospectus...");
+        }
+
+        function triggerBrochureModal() {
+            showToast("2026/2027 Global Calendar PDF download link generated and sent.");
+        }
+
+        // FORM SUBMISSIONS
+function handleRegistrationSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    recordInquiryToAdmin({
+        type: 'Course Seat Reservation',
+        name: form.querySelector('input[placeholder*="Delegate"]').value,
+        email: form.querySelector('input[type="email"]').value,
+        phone: form.querySelector('input[type="tel"]').value,
+        org: form.querySelector('input[placeholder*="Ministry"]').value,
+        city: document.getElementById('modalCitySelect').value,
+        course: document.getElementById('selectedCourseTitle').value,
+        details: form.querySelector('textarea').value
+    });
+
+    closeModal();
+    showToast("Registration request submitted directly to Admin!");
+    form.reset();
+}
+    </script>
+</body>
+</html>

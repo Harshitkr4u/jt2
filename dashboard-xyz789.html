@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPC Executive Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col">
+<script>
+    // Set your custom password here
+    const adminPassword = "YourSecurePassword123"; 
+
+    // Check if the user is already authenticated in this browser session
+    const isAuthenticated = sessionStorage.getItem("admin_authenticated");
+
+    if (isAuthenticated !== "true") {
+        const enteredPassword = prompt("Enter Admin Password:");
+        
+        if (enteredPassword === adminPassword) {
+            // Store authentication for this session only
+            sessionStorage.setItem("admin_authenticated", "true");
+        } else {
+            alert("Incorrect password. Access denied.");
+            // Redirect unauthorized users back to your homepage
+            window.location.href = "index.html"; 
+        }
+    }
+</script>
+    <!-- ADMIN HEADER -->
+    <header class="bg-[#0B1D3A] text-white py-4 px-6 shadow-md flex flex-wrap justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-amber-500 rounded-lg flex items-center justify-center font-bold text-slate-950 text-xl">GPC</div>
+            <div>
+                <h1 class="font-bold text-lg leading-none">Global Premier Centre</h1>
+                <span class="text-xs text-amber-400 font-semibold tracking-wider">Executive Management System</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-3">
+            <button onclick="clearAllData()" class="text-xs bg-red-900/60 hover:bg-red-800 text-red-200 border border-red-700/50 px-3 py-2 rounded transition">
+                <i class="fa-solid fa-rotate mr-1"></i> Reset Sample Data
+            </button>
+            <a href="index.html" class="text-xs bg-slate-800 hover:bg-slate-700 px-4 py-2 rounded text-white font-semibold transition border border-slate-700">
+                View Website <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ADMIN NAVIGATION TABS -->
+    <div class="bg-white border-b border-slate-200 px-6 py-2 shadow-sm">
+        <div class="max-w-7xl mx-auto flex gap-4 text-xs font-bold">
+            <button onclick="switchTab('inquiries')" id="tabBtn-inquiries" class="tab-btn px-4 py-2.5 rounded-lg bg-[#0B1D3A] text-white transition flex items-center gap-2">
+                <i class="fa-solid fa-inbox text-amber-400"></i> Inquiries & Submissions
+                <span id="badgeInquiriesCount" class="bg-amber-500 text-slate-950 px-2 py-0.5 rounded-full text-[10px]">0</span>
+            </button>
+            <button onclick="switchTab('courses')" id="tabBtn-courses" class="tab-btn px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition flex items-center gap-2">
+                <i class="fa-solid fa-book-open text-amber-600"></i> Course Management
+            </button>
+            <button onclick="switchTab('cities')" id="tabBtn-cities" class="tab-btn px-4 py-2.5 rounded-lg text-slate-600 hover:bg-slate-100 transition flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-amber-600"></i> Destination Hubs
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 py-8 flex-1 w-full">
+        
+        <!-- SECTION 1: INQUIRIES & SUBMISSIONS -->
+        <section id="section-inquiries" class="tab-section">
+            <div class="flex justify-between items-center mb-6">
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900">Submitted Inquiries & Registrations</h2>
+                    <p class="text-xs text-slate-500">Real-time submissions captured from landing page, catalog, city hubs, and contact forms</p>
+                </div>
+                <button onclick="clearInquiries()" class="text-xs bg-slate-200 hover:bg-slate-300 text-slate-700 px-3 py-1.5 rounded font-semibold transition">
+                    Clear Inbox
+                </button>
+            </div>
+
+            <div id="inquiriesList" class="space-y-4">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+        <!-- SECTION 2: COURSE MANAGEMENT -->
+        <section id="section-courses" class="tab-section hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Add Course Form -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-fit">
+                    <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                        <i class="fa-solid fa-plus-circle text-amber-600 mr-1"></i> Add / Publish New Course
+                    </h3>
+                    <form id="addCourseForm" onsubmit="handleAddCourse(event)" class="space-y-4 text-xs">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Course Title *</label>
+                            <input type="text" id="newTitle" required placeholder="e.g. Executive FIDIC Claims Management" class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500 focus:outline-none">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">Domain *</label>
+                                <select id="newCategory" class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500">
+                                    <option value="Accounting">Accounting & Finance</option>
+                                    <option value="Management">Management & Leadership</option>
+                                    <option value="Human Resources">Human Resources</option>
+                                    <option value="Oil">Oil & Gas Engineering</option>
+                                    <option value="Legal">Legal & Contracts</option>
+                                    <option value="IT">IT & Cybersecurity</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">City Hub *</label>
+                                <select id="newLocation" class="w-full p-2.5 border rounded-lg focus:ring-2 focus:ring-amber-500">
+                                    <option value="London">London</option>
+                                    <option value="Dubai">Dubai</option>
+                                    <option value="Riyadh">Riyadh</option>
+                                    <option value="Paris">Paris</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Istanbul">Istanbul</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">Duration *</label>
+                                <input type="text" id="newDuration" required value="5 Days" class="w-full p-2.5 border rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">Tuition Fee *</label>
+                                <input type="text" id="newFee" required value="$4,950" class="w-full p-2.5 border rounded-lg">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Course Dates *</label>
+                            <input type="text" id="newDates" required value="10 - 14 Nov 2026" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Course Outline / Description *</label>
+                            <textarea id="newDesc" rows="3" required placeholder="Outline learning objectives..." class="w-full p-2.5 border rounded-lg"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-lg shadow transition">
+                            Save & Publish Course
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Existing Courses List -->
+                <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                        <h3 class="text-base font-bold text-slate-900"><i class="fa-solid fa-list-check text-amber-600 mr-1"></i> Active Course Directory</h3>
+                        <span id="adminCourseCount" class="text-xs font-bold bg-slate-100 px-2.5 py-1 rounded text-slate-600">0 Courses</span>
+                    </div>
+                    <div id="adminCourseList" class="space-y-3 max-h-[600px] overflow-y-auto pr-1">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: DESTINATION HUBS MANAGEMENT -->
+        <section id="section-cities" class="tab-section hidden">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Add City Form -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 h-fit">
+                    <h3 class="text-base font-bold text-slate-900 mb-4 pb-2 border-b border-slate-100">
+                        <i class="fa-solid fa-city text-amber-600 mr-1"></i> Add Destination Hub
+                    </h3>
+                    <form id="addCityForm" onsubmit="handleAddCity(event)" class="space-y-4 text-xs">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">City Name *</label>
+                            <input type="text" id="cityName" required placeholder="e.g. Geneva" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Country *</label>
+                            <input type="text" id="cityCountry" required placeholder="e.g. Switzerland" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">Region *</label>
+                                <select id="cityRegion" class="w-full p-2.5 border rounded-lg">
+                                    <option value="Europe">Europe</option>
+                                    <option value="Middle East">Middle East</option>
+                                    <option value="Asia-Pacific">Asia-Pacific</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block font-bold text-slate-700 mb-1">Badge Tag</label>
+                                <input type="text" id="cityBadge" value="Diplomatic Hub" class="w-full p-2.5 border rounded-lg">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Venue District / Hotel</label>
+                            <input type="text" id="cityDistrict" value="Rue du Rhône Business Center" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Image URL</label>
+                            <input type="url" id="cityImage" placeholder="https://images.unsplash.com/..." class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-lg shadow transition">
+                            Save & Publish City Hub
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Existing Cities List -->
+                <div class="md:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                        <h3 class="text-base font-bold text-slate-900"><i class="fa-solid fa-map-location-dot text-amber-600 mr-1"></i> Active Global Hubs</h3>
+                        <span id="adminCityCount" class="text-xs font-bold bg-slate-100 px-2.5 py-1 rounded text-slate-600">0 Hubs</span>
+                    </div>
+                    <div id="adminCityList" class="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[600px] overflow-y-auto pr-1">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- EDIT ITEM MODAL -->
+    <div id="editModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 relative">
+            <button onclick="closeEditModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 id="editModalTitle" class="text-lg font-bold text-slate-900 mb-4">Edit Item</h3>
+            <form id="editForm" onsubmit="handleEditSubmit(event)" class="space-y-4 text-xs">
+                <input type="hidden" id="editIndex">
+                <input type="hidden" id="editType">
+                
+                <div id="editFieldsContainer">
+                    <!-- Dynamic input fields will be injected here -->
+                </div>
+
+                <button type="submit" class="w-full py-2.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-lg shadow transition">
+                    Save Changes
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Central Shared Form Submission Processor
+        function recordInquiryToAdmin(inquiryData) {
+            const existing = JSON.parse(localStorage.getItem('gpc_admin_inquiries') || '[]');
+            const now = new Date();
+            const formattedTime = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+            
+            const newEntry = {
+                id: 'inq_' + Date.now(),
+                type: inquiryData.type || 'General Inquiry',
+                name: inquiryData.name || 'Anonymous Delegate',
+                email: inquiryData.email || 'N/A',
+                phone: inquiryData.phone || 'N/A',
+                org: inquiryData.org || 'Independent',
+                city: inquiryData.city || 'Not Specified',
+                course: inquiryData.course || '',
+                details: inquiryData.details || '',
+                time: formattedTime
+            };
+
+            existing.unshift(newEntry);
+            localStorage.setItem('gpc_admin_inquiries', JSON.stringify(existing));
+        }
+
+        // DEFAULT SEED DATA IF LOCALSTORAGE IS EMPTY
+        const defaultCourses = [
+            { id: 'c1', title: 'Advanced Financial Analysis, Budgeting & Forecasting', category: 'Accounting', location: 'London', duration: '5 Days', fee: '$4,950', dates: '12 - 16 Nov 2026', desc: 'Comprehensive financial modeling, variance analysis, and capital budgeting.' },
+            { id: 'c2', title: 'Executive Leadership, Governance & Strategic Management', category: 'Management', location: 'Dubai', duration: '5 Days', fee: '$4,800', dates: '24 - 28 Nov 2026', desc: 'Strategic decision frameworks and corporate governance.' },
+            { id: 'c3', title: 'FIDIC Contracts, Claims & Dispute Resolution Masterclass', category: 'Legal', location: 'Riyadh', duration: '10 Days', fee: '$8,500', dates: '01 - 10 Dec 2026', desc: 'Rainbow suite contracts and international claim quantification.' }
+        ];
+
+        const defaultCities = [
+            { id: 'london', city: 'London', country: 'United Kingdom', region: 'Europe', badge: 'European HQ', district: 'Mayfair & Canary Wharf', image: 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80' },
+            { id: 'dubai', city: 'Dubai', country: 'United Arab Emirates', region: 'Middle East', badge: 'MENA Regional Hub', district: 'Sheikh Zayed Rd & DIFC', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80' },
+            { id: 'riyadh', city: 'Riyadh', country: 'Kingdom of Saudi Arabia', region: 'Middle East', badge: 'Vision 2030 Center', district: 'Olaya District & KAFD', image: 'https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=800&q=80' }
+        ];
+
+        const defaultInquiries = [
+            { id: 'inq_1', type: 'Course Seat Reservation', name: 'Dr. Sarah Jenkins', email: 's.jenkins@energycorp.com', phone: '+44 7000 112233', org: 'Energy Global', city: 'London', course: 'Advanced Financial Analysis', details: 'Need fast-track visa invitation letter.', time: '2026-10-19 14:32' }
+        ];
+
+        // LOAD STORAGE
+        function getData(key, fallback) {
+            const raw = localStorage.getItem(key);
+            if (!raw) {
+                localStorage.setItem(key, JSON.stringify(fallback));
+                return fallback;
+            }
+            return JSON.parse(raw);
+        }
+
+        function saveData(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        // TAB NAVIGATION
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-section').forEach(s => s.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.remove('bg-[#0B1D3A]', 'text-white');
+                b.classList.add('text-slate-600');
+            });
+
+            document.getElementById(`section-${tab}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tabBtn-${tab}`);
+            activeBtn.classList.add('bg-[#0B1D3A]', 'text-white');
+            activeBtn.classList.remove('text-slate-600');
+        }
+
+        // RENDER INQUIRIES
+        function renderInquiries() {
+            const list = getData('gpc_admin_inquiries', defaultInquiries);
+            const container = document.getElementById('inquiriesList');
+            document.getElementById('badgeInquiriesCount').innerText = list.length;
+
+            if (list.length === 0) {
+                container.innerHTML = `<div class="p-8 text-center bg-white rounded-xl border border-slate-200 text-slate-400 text-sm">No inquiries recorded yet.</div>`;
+                return;
+            }
+
+            container.innerHTML = list.map((inq, idx) => `
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col md:flex-row justify-between gap-4 text-xs">
+                    <div class="space-y-2 flex-1">
+                        <div class="flex items-center gap-2">
+                            <span class="bg-amber-100 text-amber-900 font-bold px-2.5 py-0.5 rounded text-[10px] uppercase">${inq.type}</span>
+                            <span class="text-slate-400">Submitted: ${inq.time || 'Recent'}</span>
+                        </div>
+                        <h4 class="font-bold text-base text-slate-900">${inq.name} <span class="text-slate-500 font-normal">(${inq.org || 'Independent Delegate'})</span></h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-slate-600 bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                            <p><i class="fa-solid fa-envelope text-amber-600 mr-1"></i> ${inq.email}</p>
+                            <p><i class="fa-solid fa-phone text-amber-600 mr-1"></i> ${inq.phone}</p>
+                            <p><i class="fa-solid fa-location-dot text-amber-600 mr-1"></i> Destination: <strong>${inq.city || 'Flexible'}</strong></p>
+                        </div>
+                        ${inq.course ? `<p class="font-bold text-slate-800"><i class="fa-solid fa-book text-amber-600 mr-1"></i> Requested Course: ${inq.course}</p>` : ''}
+                        ${inq.details ? `<p class="text-slate-500 italic bg-amber-50/50 p-2 rounded border border-amber-100/50">"${inq.details}"</p>` : ''}
+                    </div>
+                    <div class="flex md:flex-col justify-end gap-2">
+                        <a href="mailto:${inq.email}" class="px-3 py-2 bg-[#0B1D3A] text-white font-bold rounded-lg hover:bg-slate-800 transition text-center">
+                            <i class="fa-solid fa-reply mr-1"></i> Reply
+                        </a>
+                        <button onclick="openEditModal('inquiries', ${idx})" class="px-3 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold rounded-lg transition text-center">
+                            Edit
+                        </button>
+                        <button onclick="deleteInquiry(${idx})" class="px-3 py-2 bg-red-50 text-red-600 font-bold rounded-lg hover:bg-red-600 hover:text-white transition border border-red-200">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function deleteInquiry(idx) {
+            let list = getData('gpc_admin_inquiries', defaultInquiries);
+            list.splice(idx, 1);
+            saveData('gpc_admin_inquiries', list);
+            renderInquiries();
+        }
+
+        function clearInquiries() {
+            if (confirm('Are you sure you want to clear all inquiries?')) {
+                saveData('gpc_admin_inquiries', []);
+                renderInquiries();
+            }
+        }
+
+        // RENDER COURSES
+        function renderCourses() {
+            const list = getData('gpc_admin_courses', defaultCourses);
+            document.getElementById('adminCourseCount').innerText = `${list.length} Courses`;
+            const container = document.getElementById('adminCourseList');
+
+            container.innerHTML = list.map((c, idx) => `
+                <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 flex justify-between items-center text-xs">
+                    <div>
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="font-bold text-slate-900 text-sm">${c.title}</span>
+                            <span class="bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold text-[10px] uppercase">${c.category}</span>
+                        </div>
+                        <p class="text-slate-500">
+                            <i class="fa-solid fa-location-dot text-amber-600 mr-1"></i> ${c.location} | 
+                            <i class="fa-solid fa-calendar text-amber-600 ml-2 mr-1"></i> ${c.dates} | 
+                            <strong class="text-slate-800">${c.fee}</strong>
+                        </p>
+                    </div>
+                    <div class="flex gap-2 ml-4 shrink-0">
+                        <button onclick="openEditModal('courses', ${idx})" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold px-3 py-2 rounded-lg transition">
+                            Edit
+                        </button>
+                        <button onclick="deleteCourse(${idx})" class="bg-red-50 hover:bg-red-600 hover:text-white text-red-600 font-bold px-3 py-2 rounded-lg transition border border-red-200">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleAddCourse(e) {
+            e.preventDefault();
+            let list = getData('gpc_admin_courses', defaultCourses);
+            const newCourse = {
+                id: 'c_' + Date.now(),
+                title: document.getElementById('newTitle').value,
+                category: document.getElementById('newCategory').value,
+                location: document.getElementById('newLocation').value,
+                duration: document.getElementById('newDuration').value,
+                fee: document.getElementById('newFee').value,
+                dates: document.getElementById('newDates').value,
+                desc: document.getElementById('newDesc').value
+            };
+            list.unshift(newCourse);
+            saveData('gpc_admin_courses', list);
+            alert('Course successfully published to live website catalog!');
+            e.target.reset();
+            renderCourses();
+        }
+
+        function deleteCourse(idx) {
+            if (confirm('Delete this course from website catalog?')) {
+                let list = getData('gpc_admin_courses', defaultCourses);
+                list.splice(idx, 1);
+                saveData('gpc_admin_courses', list);
+                renderCourses();
+            }
+        }
+
+        // RENDER CITIES
+        function renderCities() {
+            const list = getData('gpc_admin_cities', defaultCities);
+            document.getElementById('adminCityCount').innerText = `${list.length} Hubs`;
+            const container = document.getElementById('adminCityList');
+
+            container.innerHTML = list.map((c, idx) => `
+                <div class="p-3 rounded-xl border border-slate-200 bg-slate-50 flex gap-3 text-xs items-center">
+                    <img src="${c.image || 'https://via.placeholder.com/80'}" class="w-16 h-16 rounded-lg object-cover shrink-0">
+                    <div class="flex-1">
+                        <h4 class="font-bold text-slate-900">${c.city}, <span class="text-slate-500 font-normal">${c.country}</span></h4>
+                        <span class="bg-amber-100 text-amber-900 text-[10px] font-bold px-1.5 py-0.5 rounded">${c.badge}</span>
+                        <p class="text-[11px] text-slate-500 mt-1">${c.district}</p>
+                    </div>
+                    <div class="flex gap-1">
+                        <button onclick="openEditModal('cities', ${idx})" class="text-slate-600 hover:bg-slate-200 p-2 rounded transition" title="Edit Hub">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button onclick="deleteCity(${idx})" class="text-red-600 hover:bg-red-100 p-2 rounded transition" title="Delete Hub">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function handleAddCity(e) {
+            e.preventDefault();
+            let list = getData('gpc_admin_cities', defaultCities);
+            const newCity = {
+                id: document.getElementById('cityName').value.toLowerCase().replace(/\s+/g, ''),
+                city: document.getElementById('cityName').value,
+                country: document.getElementById('cityCountry').value,
+                region: document.getElementById('cityRegion').value,
+                badge: document.getElementById('cityBadge').value,
+                district: document.getElementById('cityDistrict').value,
+                image: document.getElementById('cityImage').value || 'https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800&q=80'
+            };
+            list.unshift(newCity);
+            saveData('gpc_admin_cities', list);
+            alert('New Destination Hub published!');
+            e.target.reset();
+            renderCities();
+        }
+
+        function deleteCity(idx) {
+            if (confirm('Delete this city hub?')) {
+                let list = getData('gpc_admin_cities', defaultCities);
+                list.splice(idx, 1);
+                saveData('gpc_admin_cities', list);
+                renderCities();
+            }
+        }
+
+        // --- EDIT MODAL & PERSISTENCE FUNCTIONS ---
+        let activeEditType = '';
+        let activeEditIndex = null;
+
+        function openEditModal(type, index) {
+            activeEditType = type;
+            activeEditIndex = index;
+            const modal = document.getElementById('editModal');
+            const container = document.getElementById('editFieldsContainer');
+            container.innerHTML = '';
+
+            if (type === 'courses') {
+                const list = getData('gpc_admin_courses', defaultCourses);
+                const item = list[index];
+                document.getElementById('editModalTitle').innerText = "Edit Course";
+                container.innerHTML = `
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Course Title *</label>
+                        <input type="text" id="editTitle" required value="${item.title}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Domain *</label>
+                            <input type="text" id="editCategory" required value="${item.category}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">City Hub *</label>
+                            <input type="text" id="editLocation" required value="${item.location}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Duration *</label>
+                            <input type="text" id="editDuration" required value="${item.duration}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Tuition Fee *</label>
+                            <input type="text" id="editFee" required value="${item.fee}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label class="block font-bold text-slate-700 mb-1">Dates *</label>
+                        <input type="text" id="editDates" required value="${item.dates}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                    <div class="mt-2">
+                        <label class="block font-bold text-slate-700 mb-1">Description *</label>
+                        <textarea id="editDesc" rows="3" required class="w-full p-2.5 border rounded-lg">${item.desc}</textarea>
+                    </div>
+                `;
+            } else if (type === 'cities') {
+                const list = getData('gpc_admin_cities', defaultCities);
+                const item = list[index];
+                document.getElementById('editModalTitle').innerText = "Edit Destination Hub";
+                container.innerHTML = `
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">City Name *</label>
+                        <input type="text" id="editCityName" required value="${item.city}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                    <div class="mt-2">
+                        <label class="block font-bold text-slate-700 mb-1">Country *</label>
+                        <input type="text" id="editCityCountry" required value="${item.country}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Region *</label>
+                            <input type="text" id="editCityRegion" required value="${item.region}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Badge Tag</label>
+                            <input type="text" id="editCityBadge" value="${item.badge}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label class="block font-bold text-slate-700 mb-1">Venue District / Hotel</label>
+                        <input type="text" id="editCityDistrict" value="${item.district}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                `;
+            } else if (type === 'inquiries') {
+                const list = getData('gpc_admin_inquiries', defaultInquiries);
+                const item = list[index];
+                document.getElementById('editModalTitle').innerText = "Edit Inquiry Details";
+                container.innerHTML = `
+                    <div>
+                        <label class="block font-bold text-slate-700 mb-1">Delegate Name *</label>
+                        <input type="text" id="editInqName" required value="${item.name}" class="w-full p-2.5 border rounded-lg">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2 mt-2">
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Email *</label>
+                            <input type="email" id="editInqEmail" required value="${item.email}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                        <div>
+                            <label class="block font-bold text-slate-700 mb-1">Phone *</label>
+                            <input type="text" id="editInqPhone" required value="${item.phone}" class="w-full p-2.5 border rounded-lg">
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <label class="block font-bold text-slate-700 mb-1">Notes / Details</label>
+                        <textarea id="editInqDetails" rows="3" class="w-full p-2.5 border rounded-lg">${item.details || ''}</textarea>
+                    </div>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeEditModal() {
+            document.getElementById('editModal').classList.add('hidden');
+        }
+
+        function handleEditSubmit(e) {
+            e.preventDefault();
+            
+            if (activeEditType === 'courses') {
+                let list = getData('gpc_admin_courses', defaultCourses);
+                list[activeEditIndex] = {
+                    ...list[activeEditIndex],
+                    title: document.getElementById('editTitle').value,
+                    category: document.getElementById('editCategory').value,
+                    location: document.getElementById('editLocation').value,
+                    duration: document.getElementById('editDuration').value,
+                    fee: document.getElementById('editFee').value,
+                    dates: document.getElementById('editDates').value,
+                    desc: document.getElementById('editDesc').value
+                };
+                saveData('gpc_admin_courses', list);
+                renderCourses();
+            } else if (activeEditType === 'cities') {
+                let list = getData('gpc_admin_cities', defaultCities);
+                list[activeEditIndex] = {
+                    ...list[activeEditIndex],
+                    city: document.getElementById('editCityName').value,
+                    country: document.getElementById('editCityCountry').value,
+                    region: document.getElementById('editCityRegion').value,
+                    badge: document.getElementById('editCityBadge').value,
+                    district: document.getElementById('editCityDistrict').value
+                };
+                saveData('gpc_admin_cities', list);
+                renderCities();
+            } else if (activeEditType === 'inquiries') {
+                let list = getData('gpc_admin_inquiries', defaultInquiries);
+                list[activeEditIndex] = {
+                    ...list[activeEditIndex],
+                    name: document.getElementById('editInqName').value,
+                    email: document.getElementById('editInqEmail').value,
+                    phone: document.getElementById('editInqPhone').value,
+                    details: document.getElementById('editInqDetails').value
+                };
+                saveData('gpc_admin_inquiries', list);
+                renderInquiries();
+            }
+
+            alert('Changes updated successfully!');
+            closeEditModal();
+        }
+
+        function clearAllData() {
+            if (confirm('Reset database to default sample data?')) {
+                localStorage.clear();
+                window.location.reload();
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderInquiries();
+            renderCourses();
+            renderCities();
+        });
+    </script>
+</body>
+</html>

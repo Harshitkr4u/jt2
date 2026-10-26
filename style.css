@@ -1,0 +1,66 @@
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f9fc;
+  color: #1a202c;
+}
+
+/* LPC Header Style */
+.lpc-header-bg {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* LPC Hero Banner & Floating Search Bar Card */
+.search-filter-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 35px -5px rgba(7, 22, 43, 0.12);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Card Styling matching LPC */
+.card {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(7, 22, 43, 0.08);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #07162b;
+  color: #df9b3a;
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Course item card styles */
+.course-item {
+  background: #ffffff;
+  border-left: 4px solid #07162b;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: border-color 0.2s;
+}
+
+.course-item:hover {
+  border-left-color: #df9b3a;
+}

@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us & Global Offices | Global Premier Centre (GPC)</title>
+    <meta name="description" content="Get in touch with Global Premier Centre (GPC) for executive education programs, in-house training proposals, course registration, and regional hub inquiries in London, Dubai, Riyadh, and worldwide.">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navy: {
+                        800: '#0d2540',
+                        900: '#07162b', // Deep LPC Navy Header & Base
+                        950: '#040d1a',
+                    },
+                    gold: {
+                        400: '#facc15',
+                        500: '#df9b3a', // Exact LPC Golden Yellow / Amber
+                        600: '#c88523',
+                        700: '#a36814',
+                    },
+                    lpcslate: '#f4f6f8'
+                }
+            }
+        }
+    }
+</script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-headset text-gold-500"></i> Global Executive Support & Consultation Lines Active</span>
+                <span class="hidden lg:flex items-center gap-2"><i class="fa-solid fa-clock text-gold-500"></i> Mon - Fri: 08:30 - 18:00 (GMT / GST)</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="tel:+442080900464" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +44 20 8090 0464</a>
+                <a href="mailto:info@gpcertification.com" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> info@gpcertification.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
+    <header class="bg-navy-900 text-white sticky top-0 z-40 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center shadow-lg text-navy-950 font-black text-2xl tracking-wider">
+                        GPC
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-tight tracking-wide text-white">GLOBAL PREMIER</span>
+                        <span class="text-xs text-gold-400 tracking-widest font-semibold">CENTRE FOR EXECUTIVE EDUCATION</span>
+                    </div>
+                </a>
+
+                 <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="index.html" class="text-slate-300 hover:text-gold-400 transition-colors">Home</a>
+                    <a href="courses.html" class="text-slate-300 hover:text-gold-400 transition-colors">Courses</a>
+                    <a href="cities.html" class="text-slate-300 hover:text-gold-400 transition-colors">Training Centers</a>
+                    <a href="about.html" class="text-slate-300 hover:text-gold-400 transition-colors">About</a>
+                    <a href="my-blog/dist/blog.html">Blog</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-gold-400 transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="courses.html" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-md transition-all">
+                        Inquire Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-300 hover:text-gold-400">Home</a>
+            <a href="courses.html" class="block py-2 text-slate-300 hover:text-gold-400">Courses</a>
+            <a href="cities.html" class="block py-2 text-slate-300 hover:text-gold-400">Destinations</a>
+            <a href="about.html" class="block py-2 text-slate-300 hover:text-gold-400">About</a>
+            <a href="contact.html" class="block py-2 text-gold-400 font-bold">Contact Us</a>
+            <a href="#contact-form-section" class="block text-center mt-2 bg-gold-500 text-navy-950 font-bold py-2.5 rounded-lg">
+                Inquire Direct
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative bg-navy-900 text-white py-16 lg:py-20 overflow-hidden border-b border-slate-800">
+        <div class="absolute inset-0 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:24px_24px] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-gold-400 text-xs font-semibold mb-6">
+                    <i class="fa-solid fa-globe"></i> Global Reach & Regional Engagement
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Get in Touch with Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-gold-600">Executive Advisors</span>
+                </h1>
+                <p class="text-lg text-slate-300 mb-8 leading-relaxed">
+                    Have questions about upcoming course dates, venue arrangements, customized in-house training solutions, or group registration pricing? Connect with our dedicated international desk.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact-form-section" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-6 py-3 rounded-lg shadow-lg transition-all text-sm">
+                        Send an Inquiry
+                    </a>
+                    <a href="#global-offices" class="bg-navy-800 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold px-6 py-3 rounded-lg transition-all text-sm">
+                        View Regional Offices
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK CONTACT STAT CARDS -->
+    <section class="bg-navy-950 text-white py-10 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Phone -->
+                <div class="bg-navy-900/80 p-6 rounded-xl border border-slate-800 flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 uppercase font-semibold">Direct Telephone</div>
+                        <a href="tel:+442080900464" class="text-lg font-bold text-white hover:text-gold-400 transition-colors">+44 20 8090 0464</a>
+                        <p class="text-xs text-slate-400 mt-0.5">London Head Office Desk</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="bg-navy-900/80 p-6 rounded-xl border border-slate-800 flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gold-500/20 text-gold-400 rounded-lg flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 uppercase font-semibold">Email Desk</div>
+                        <a href="mailto:info@gpcertification.com" class="text-lg font-bold text-white hover:text-gold-400 transition-colors">info@gpcertification.com</a>
+                        <p class="text-xs text-slate-400 mt-0.5">Response within 24 business hours</p>
+                    </div>
+                </div>
+
+                <!-- WhatsApp / Urgent -->
+                <div class="bg-navy-900/80 p-6 rounded-xl border border-slate-800 flex items-center gap-4">
+                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-lg flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 uppercase font-semibold">Corporate WhatsApp</div>
+                        <a href="https://wa.me/442080900464" target="_blank" class="text-lg font-bold text-white hover:text-emerald-400 transition-colors">+44 20 8090 0464</a>
+                        <p class="text-xs text-slate-400 mt-0.5">Instant Registration Assistance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM & HEADQUARTERS SECTION -->
+    <section id="contact-form-section" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- CONTACT FORM (7 Cols) -->
+                <div class="lg:col-span-7 bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="mb-6">
+                        <span class="text-xs font-bold text-gold-600 uppercase tracking-widest">Interactive Inquiry Desk</span>
+                        <h2 class="text-2xl font-extrabold text-navy-900 mt-1">Send Us a Direct Message</h2>
+                        <p class="text-xs text-slate-500 mt-1">Fill in the parameters below and an advisor specializing in your domain will respond shortly.</p>
+                    </div>
+
+                    <!-- Inquiry Type Selector Buttons -->
+                    <div class="mb-6 flex flex-wrap gap-2">
+                        <button type="button" onclick="setInquiryType('general')" id="type-btn-general" class="inquiry-type-btn text-xs font-bold px-4 py-2 rounded-lg bg-navy-900 text-white shadow-sm transition-all">
+                            General Inquiry
+                        </button>
+                        <button type="button" onclick="setInquiryType('inhouse')" id="type-btn-inhouse" class="inquiry-type-btn text-xs font-bold px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition-all">
+                            In-House Training Quote
+                        </button>
+                        <button type="button" onclick="setInquiryType('registration')" id="type-btn-registration" class="inquiry-type-btn text-xs font-bold px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition-all">
+                            Course Seat Reservation
+                        </button>
+                    </div>
+
+                    <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-4">
+                        <input type="hidden" id="inquiry-type-field" value="General Inquiry">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">First Name *</label>
+                                <input type="text" required placeholder="e.g. Abdullah" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Last Name *</label>
+                                <input type="text" required placeholder="e.g. Al-Mansoor" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Work Email *</label>
+                                <input type="email" required placeholder="a.mansoor@company.com" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Phone / WhatsApp *</label>
+                                <input type="tel" required placeholder="+966 50 000 0000" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Organization / Department</label>
+                                <input type="text" placeholder="e.g. Saudi Aramco / Finance" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Preferred Venue / City</label>
+                                <select class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white text-slate-700">
+                                    <option value="">Select Destination Hub...</option>
+                                    <option value="London">London, UK</option>
+                                    <option value="Dubai">Dubai, UAE</option>
+                                    <option value="Riyadh">Riyadh, KSA</option>
+                                    <option value="Jeddah">Jeddah, KSA</option>
+                                    <option value="Paris">Paris, France</option>
+                                    <option value="Amsterdam">Amsterdam, Netherlands</option>
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Kuala Lumpur">Kuala Lumpur, Malaysia</option>
+                                    <option value="In-House">On-Site Client Premises (In-House)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Message / Specific Requirements *</label>
+                            <textarea rows="4" required placeholder="Please outline course title, estimated delegate headcount, preferred start date, or custom consulting needs..." class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:ring-2 focus:ring-gold-500 focus:outline-none bg-white"></textarea>
+                        </div>
+
+                        <div class="flex items-start gap-2 pt-2">
+                            <input type="checkbox" required id="privacy-consent" class="mt-1 rounded text-gold-500 focus:ring-gold-500">
+                            <label for="privacy-consent" class="text-xs text-slate-500">
+                                I agree to allow Global Premier Centre to store and process my details in accordance with data privacy regulations to answer this inquiry.
+                            </label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold py-3.5 rounded-lg text-sm shadow-md transition-all">
+                            Submit Inquiry to Executive Advisor
+                        </button>
+                    </form>
+                </div>
+
+                <!-- HEADQUARTERS DETAILS & MAP PREVIEW (5 Cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    
+                    <!-- HQ Card -->
+                    <div class="bg-navy-900 text-white rounded-2xl p-8 shadow-xl border border-slate-800">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center text-navy-950 font-black">
+                                GPC
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">London Headquarters</h3>
+                                <p class="text-xs text-gold-400">Global Premier Centre (LPC Partner)</p>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-location-dot text-gold-500 mt-1"></i>
+                                <span>14 Cambridge Court, 210 Shepherds Bush Road, London W6 7NJ, United Kingdom</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-phone text-gold-500"></i>
+                                <span>+44 20 8090 0464 / +44 20 7247 1452</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-envelope text-gold-500"></i>
+                                <span>info@gpcertification.com</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fa-solid fa-clock text-gold-500"></i>
+                                <span>Mon - Fri: 09:00 - 17:00 (GMT)</span>
+                            </li>
+                        </ul>
+
+                        <div class="mt-6 pt-6 border-t border-slate-800 text-xs text-slate-400">
+                            <strong class="text-slate-200">BAC & UKAS Accreditation Ref:</strong> Short course provider accredited under ISO 9001:2015 & ISO 45001 standards.
+                        </div>
+                    </div>
+
+                    <!-- Interactive Map Component -->
+                    <div class="bg-slate-100 rounded-2xl overflow-hidden border border-slate-200 shadow-inner h-64 relative flex items-center justify-center">
+                        <iframe 
+                            class="w-full h-full border-0" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.541481077759!2d-0.22416962338006192!3d51.4940829718086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760fb2167d6051%3A0xb363ad5c6f6630f!2s210%20Shepherds%20Bush%20Rd%2C%20London%20W6%207NJ%2C%20UK!5e0!3m2!1sen!2s!4v1710000000000!5m2!1sen!2s" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL REGIONAL OFFICES GRID -->
+    <section id="global-offices" class="py-16 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Worldwide Presence</h2>
+                <h3 class="text-3xl font-bold text-navy-900">Regional Support & Executive Hubs</h3>
+                <p class="text-slate-600 text-sm mt-2">Connecting international delegates with localized registration support and dedicated training coordination teams.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Dubai Office -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🇦🇪</span>
+                            <h4 class="font-bold text-navy-900 text-lg">Dubai, UAE</h4>
+                        </div>
+                        <span class="text-xs font-bold text-gold-600 bg-gold-50 px-2 py-1 rounded">MENA Regional Hub</span>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Business Bay, Park Lane Tower, Offices 718-720, Sheikh Zayed Road, Dubai, UAE.
+                    </p>
+                    <div class="text-xs space-y-1 text-slate-500 border-t border-slate-100 pt-3">
+                        <p><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +971 50 672 1941</p>
+                        <p><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> uae@gpcertification.com</p>
+                    </div>
+                </div>
+
+                <!-- Riyadh Office -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🇸🇦</span>
+                            <h4 class="font-bold text-navy-900 text-lg">Riyadh, KSA</h4>
+                        </div>
+                        <span class="text-xs font-bold text-gold-600 bg-gold-50 px-2 py-1 rounded">GCC Operations</span>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        King Fahd Road Executive Hub, Olaya District, Riyadh, Kingdom of Saudi Arabia.
+                    </p>
+                    <div class="text-xs space-y-1 text-slate-500 border-t border-slate-100 pt-3">
+                        <p><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +966 11 800 4520</p>
+                        <p><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> ksa@gpcertification.com</p>
+                    </div>
+                </div>
+
+                <!-- Paris Office -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🇫🇷</span>
+                            <h4 class="font-bold text-navy-900 text-lg">Paris, France</h4>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">European Hub</span>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Avenue des Champs-Élysées, 75008 Paris, European Executive Hub.
+                    </p>
+                    <div class="text-xs space-y-1 text-slate-500 border-t border-slate-100 pt-3">
+                        <p><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +33 1 84 88 92 10</p>
+                        <p><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> europe@gpcertification.com</p>
+                    </div>
+                </div>
+
+                <!-- Kuala Lumpur Office -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🇲🇾</span>
+                            <h4 class="font-bold text-navy-900 text-lg">Kuala Lumpur</h4>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">Asia-Pacific Desk</span>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        KLCC Twin Towers Executive Suites, 50088 Kuala Lumpur, Malaysia.
+                    </p>
+                    <div class="text-xs space-y-1 text-slate-500 border-t border-slate-100 pt-3">
+                        <p><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +60 3 2181 9000</p>
+                        <p><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> asia@gpcertification.com</p>
+                    </div>
+                </div>
+
+                <!-- Istanbul Office -->
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-2xl">🇹🇷</span>
+                            <h4 class="font-bold text-navy-900 text-lg">Istanbul, Turkey</h4>
+                        </div>
+                        <span class="text-xs font-bold text-slate-600 bg-slate-100 px-2 py-1 rounded">Eurasia Hub</span>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+                        Levent Business District, 34394 Istanbul, Turkey.
+                    </p>
+                    <div class="text-xs space-y-1 text-slate-500 border-t border-slate-100 pt-3">
+                        <p><i class="fa-solid fa-phone text-gold-500 mr-1.5"></i> +90 212 319 7800</p>
+                        <p><i class="fa-solid fa-envelope text-gold-500 mr-1.5"></i> eurasia@gpcertification.com</p>
+                    </div>
+                </div>
+
+                <!-- In-House Global Desk -->
+                <div class="bg-navy-900 text-white p-6 rounded-xl border border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <i class="fa-solid fa-building-user text-gold-400 text-xl"></i>
+                            <h4 class="font-bold text-white text-lg">On-Site Client Consulting</h4>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-4 leading-relaxed">
+                            Request customized training programs delivered directly at your corporate office or facility worldwide.
+                        </p>
+                    </div>
+                    <button onclick="setInquiryType('inhouse'); document.getElementById('contact-form-section').scrollIntoView({behavior:'smooth'});" class="w-full bg-gold-500 text-navy-950 font-bold py-2 rounded text-xs transition-colors">
+                        Request In-House Proposal
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <section class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-xs font-bold text-gold-600 uppercase tracking-widest mb-2">Helpful Information</h2>
+                <h3 class="text-3xl font-bold text-navy-900">Frequently Asked Questions</h3>
+            </div>
+
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq('faq-1')" class="w-full p-5 text-left font-bold text-navy-900 text-sm flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                        <span>How do I complete registration and receive an official invoice?</span>
+                        <i id="icon-faq-1" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-1" class="hidden p-5 text-xs text-slate-600 border-t border-slate-200 leading-relaxed bg-white">
+                        You can register online through our Courses page or by submitting the inquiry form above. Once submitted, our finance department will issue an official invoice along with wire payment details and formal course confirmation documents.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq('faq-2')" class="w-full p-5 text-left font-bold text-navy-900 text-sm flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                        <span>What is included in the course registration fee?</span>
+                        <i id="icon-faq-2" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-2" class="hidden p-5 text-xs text-slate-600 border-t border-slate-200 leading-relaxed bg-white">
+                        Course fees cover full attendance in executive 5-star hotel training venues, comprehensive printed/digital course materials, daily lunches and executive coffee breaks, interactive workshop case studies, and an accredited Certificate of Completion.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq('faq-3')" class="w-full p-5 text-left font-bold text-navy-900 text-sm flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors">
+                        <span>Do you assist international delegates with visa invitation letters?</span>
+                        <i id="icon-faq-3" class="fa-solid fa-chevron-down text-slate-400 transition-transform"></i>
+                    </button>
+                    <div id="faq-3" class="hidden p-5 text-xs text-slate-600 border-t border-slate-200 leading-relaxed bg-white">
+                        Yes. Upon confirmation of course enrollment and payment, Global Premier Centre issues official invitation letters and visa support documentation to facilitate embassy entry processing for London, Schengen, and GCC hubs.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-400 pt-16 pb-12 border-t border-slate-800 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center font-black text-navy-950 text-xl">
+                            GPC
+                        </div>
+                        <span class="font-bold text-lg text-white tracking-wide">GLOBAL PREMIER CENTRE</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        International leader in executive education, corporate capacity building, and organizational consulting.
+                    </p>
+                    <div class="pt-2 text-xs text-slate-400 space-y-1">
+                        <p><strong class="text-slate-300">Headquarters:</strong> 14 Cambridge Court, 210 Shepherds Bush Rd, London W6 7NJ</p>
+                        <p><strong class="text-slate-300">Tel:</strong> +44 20 8090 0464</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 border-b border-slate-800 pb-2">Quick Directory</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="index.html" class="hover:text-gold-400 transition-colors">Home Page</a></li>
+                        <li><a href="courses.html" class="hover:text-gold-400 transition-colors">Full Courses</a></li>
+                        <li><a href="cities.html" class="hover:text-gold-400 transition-colors">11 Destination Hubs</a></li>
+                        <li><a href="about.html" class="hover:text-gold-400 transition-colors">ISO Standards & Accreditation</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Accreditations -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 border-b border-slate-800 pb-2">Certified Frameworks</h3>
+                    <ul class="space-y-2 text-xs">
+                        <li><span class="text-slate-300">ISO 9001:2015 Certification</span></li>
+                        <li><span class="text-slate-300">ISO 45001:2018 Certification</span></li>
+                        <li><span class="text-slate-300">PMI Authorized Coursework</span></li>
+                        <li><span class="text-slate-300">SHRM Recertification Partner</span></li>
+                        <li><span class="text-slate-300">CPD Standards Certified</span></li>
+                    </ul>
+                </div>
+
+                <!-- Direct Action -->
+                <div>
+                    <h3 class="text-white font-bold text-sm mb-4 border-b border-slate-800 pb-2">Inquiries</h3>
+                    <p class="text-xs text-slate-400 mb-4">Reach out to our global advisors for course availability and custom training proposals.</p>
+                    <a href="#contact-form-section" class="inline-block w-full text-center bg-navy-900 hover:bg-slate-800 text-gold-400 border border-slate-700 font-semibold py-2 px-4 rounded text-xs transition-colors">
+                        Direct Inquiry Form
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; 2026 Global Premier Centre (GPC). All rights reserved. Modeled on international standards.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-slate-200">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-200">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-200">Accreditation Policies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT -->
+    <script>
+        // Central Shared Form Submission Processor
+function recordInquiryToAdmin(inquiryData) {
+    const existing = JSON.parse(localStorage.getItem('gpc_admin_inquiries') || '[]');
+    const now = new Date();
+    const formattedTime = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+    
+    const newEntry = {
+        id: 'inq_' + Date.now(),
+        type: inquiryData.type || 'General Inquiry',
+        name: inquiryData.name || 'Anonymous Delegate',
+        email: inquiryData.email || 'N/A',
+        phone: inquiryData.phone || 'N/A',
+        org: inquiryData.org || 'Independent',
+        city: inquiryData.city || 'Not Specified',
+        course: inquiryData.course || '',
+        details: inquiryData.details || '',
+        time: formattedTime
+    };
+
+    existing.unshift(newEntry);
+    localStorage.setItem('gpc_admin_inquiries', JSON.stringify(existing));
+}
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set Form Inquiry Type Dynamically
+        function setInquiryType(type) {
+            const btns = document.querySelectorAll('.inquiry-type-btn');
+            btns.forEach(btn => {
+                btn.className = 'inquiry-type-btn text-xs font-bold px-4 py-2 rounded-lg bg-white border border-slate-300 text-slate-700 hover:bg-slate-100 transition-all';
+            });
+
+            const targetBtn = document.getElementById(`type-btn-${type}`);
+            if (targetBtn) {
+                targetBtn.className = 'inquiry-type-btn text-xs font-bold px-4 py-2 rounded-lg bg-navy-900 text-white shadow-sm transition-all';
+            }
+
+            const hiddenField = document.getElementById('inquiry-type-field');
+            if (type === 'inhouse') hiddenField.value = 'In-House Training Proposal';
+            else if (type === 'registration') hiddenField.value = 'Course Seat Reservation';
+            else hiddenField.value = 'General Inquiry';
+        }
+
+        /// Form Submission
+function submitContactForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const inquiryType = document.getElementById('inquiry-type-field').value;
+    
+    recordInquiryToAdmin({
+        type: inquiryType,
+        name: form.querySelector('input[placeholder*="Abdullah"]').value + ' ' + form.querySelector('input[placeholder*="Al-Mansoor"]').value,
+        email: form.querySelector('input[type="email"]').value,
+        phone: form.querySelector('input[type="tel"]').value,
+        org: form.querySelector('input[placeholder*="Aramco"]').value,
+        city: form.querySelector('select').value,
+        details: form.querySelector('textarea').value
+    });
+
+    alert(`Thank you for submitting your request (${inquiryType}). An executive training advisor from Global Premier Centre will contact you within 24 hours.`);
+    form.reset();
+}
+
+        // FAQ Toggle Accordion
+        function toggleFaq(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180');
+            }
+        }
+    </script>
+</body>
+</html>

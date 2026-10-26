@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Premier Centre (GPC) | Executive Education & Corporate Training</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    navy: {
+                        800: '#0d2540',
+                        900: '#07162b', // Deep LPC Navy Header & Base
+                        950: '#040d1a',
+                    },
+                    gold: {
+                        400: '#facc15',
+                        500: '#df9b3a', // Exact LPC Golden Yellow / Amber
+                        600: '#c88523',
+                        700: '#a36814',
+                    },
+                    lpcslate: '#f4f6f8'
+                }
+            }
+        }
+    }
+</script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-serif-heading { font-family: 'Playfair Display', serif; }
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0b1d3a; }
+        ::-webkit-scrollbar-thumb { background: #d97706; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #b45309; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-navy-950 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+            <div class="flex items-center gap-6">
+                <span class="flex items-center gap-2"><i class="fa-solid fa-ribbon text-gold-500"></i> ISO 9001:2015 & ISO 45001 Certified Institution</span>
+                <span class="hidden lg:flex items-center gap-2"><i class="fa-solid fa-award text-gold-500"></i> PMI Authorized Training Partner & SHRM Recertification Provider</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="tel:+442072471452" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-phone text-gold-500 mr-1"></i> +44 20 7247 1452</a>
+                <a href="mailto:info@gpcertification.com" class="hover:text-gold-400 transition-colors"><i class="fa-solid fa-envelope text-gold-500 mr-1"></i> info@gpcertification.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER / NAVIGATION -->
+    <header class="bg-navy-900 text-white sticky top-0 z-40 shadow-xl border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand Logo -->
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-gold-400 to-gold-600 rounded-lg flex items-center justify-center shadow-lg text-navy-950 font-black text-2xl tracking-wider">
+                        GPC
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-lg leading-tight tracking-wide text-white">GLOBAL PREMIER</span>
+                        <span class="text-xs text-gold-400 tracking-widest font-semibold">CENTRE FOR EXECUTIVE EDUCATION</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold">
+                    <a href="index.html" class="text-slate-300 hover:text-gold-400 transition-colors">Home</a>
+                    <a href="courses.html" class="text-slate-300 hover:text-gold-400 transition-colors">Courses</a>
+                    <a href="cities.html" class="text-slate-300 hover:text-gold-400 transition-colors">Training Centers</a>
+                    <a href="about.html" class="text-slate-300 hover:text-gold-400 transition-colors">About</a>
+                    <a href="my-blog/dist/blog.html">Blog</a>
+                    <a href="contact.html" class="text-slate-300 hover:text-gold-400 transition-colors">Contact Us</a>
+                </nav>
+
+                <!-- Action Button -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="courses.html" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold text-sm px-5 py-2.5 rounded-lg shadow-md transition-all">
+                        Inquire Now
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-950 border-t border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="index.html" class="block py-2 text-slate-300 hover:text-gold-400">Home</a>
+            <a href="courses.html" class="block py-2 text-slate-300 hover:text-gold-400">Courses</a>
+            <a href="cities.html" class="block py-2 text-slate-300 hover:text-gold-400">Destinations</a>
+            <a href="about.html" class="block py-2 text-slate-300 hover:text-gold-400">About</a>
+            <a href="contact.html" class="block py-2 text-slate-300 hover:text-gold-400">Contact Us</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative bg-gradient-to-b from-navy-900 via-navy-800 to-slate-900 text-white pt-12 pb-20 overflow-hidden">
+        <!-- Background Pattern Decor -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d97706_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-navy-950/80 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-gold-400 animate-ping"></span>
+                    Premier Corporate Training & Executive Development
+                </div>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-serif-heading text-white leading-tight mb-6">
+                    Empowering Global Leaders Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500">World-Class Education</span>
+                </h1>
+                <p class="text-base sm:text-lg text-slate-300 font-light leading-relaxed">
+                    Master essential management skills, statutory frameworks, and technological innovations across 500+ accredited short courses in 25+ major international hubs.
+                </p>
+            </div>
+
+            <!-- INTERACTIVE SEARCH BOX -->
+            <div class="max-w-4xl mx-auto bg-navy-950/90 p-4 sm:p-6 rounded-2xl border border-navy-700/60 shadow-2xl backdrop-blur-md">
+                <div class="flex flex-col md:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                        <input type="text" id="heroSearchInput" oninput="filterCourses()" placeholder="Search title, e.g., 'Financial Strategy', 'Contract Law', 'HR Analytics'..." class="w-full pl-11 pr-4 py-3.5 bg-navy-900 border border-navy-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 text-sm">
+                    </div>
+                    <div class="w-full md:w-52">
+                        <select id="heroLocationSelect" onchange="filterCourses()" class="w-full py-3.5 px-4 bg-navy-900 border border-navy-700 rounded-xl text-slate-200 focus:outline-none focus:border-gold-500 text-sm">
+                            <option value="">All Locations</option>
+                            <option value="London">London (UK)</option>
+                            <option value="Dubai">Dubai (UAE)</option>
+                            <option value="Riyadh">Riyadh (KSA)</option>
+                            <option value="Paris">Paris (France)</option>
+                            <option value="Singapore">Singapore</option>
+                        </select>
+                    </div>
+                    <button onclick="scrollToCatalog()" class="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold px-8 py-3.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                        <span>Find Course</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+
+                <!-- QUICK FILTER TAGS -->
+                <div class="mt-4 pt-4 border-t border-navy-800/80 flex flex-wrap items-center gap-2 text-xs">
+                    <span class="text-slate-400 font-medium mr-1">Popular Topics:</span>
+                    <button onclick="quickSearch('Accounting')" class="px-2.5 py-1 rounded-md bg-navy-900 text-slate-300 hover:text-gold-400 hover:bg-navy-800 transition">Finance & Budgeting</button>
+                    <button onclick="quickSearch('Leadership')" class="px-2.5 py-1 rounded-md bg-navy-900 text-slate-300 hover:text-gold-400 hover:bg-navy-800 transition">Executive Leadership</button>
+                    <button onclick="quickSearch('Oil')" class="px-2.5 py-1 rounded-md bg-navy-900 text-slate-300 hover:text-gold-400 hover:bg-navy-800 transition">Oil & Gas Engineering</button>
+                    <button onclick="quickSearch('Procurement')" class="px-2.5 py-1 rounded-md bg-navy-900 text-slate-300 hover:text-gold-400 hover:bg-navy-800 transition">Contract Management</button>
+                    <button onclick="quickSearch('Cybersecurity')" class="px-2.5 py-1 rounded-md bg-navy-900 text-slate-300 hover:text-gold-400 hover:bg-navy-800 transition">IT Security</button>
+                </div>
+            </div>
+
+            <!-- KEY STATS CALLOUT -->
+            <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto text-center">
+                <div class="p-4 rounded-xl bg-navy-950/40 border border-navy-800">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif-heading">500+</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Specialized Programs</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-950/40 border border-navy-800">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white font-serif-heading">25+</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Global Training Hubs</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-950/40 border border-navy-800">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-gold-400 font-serif-heading">15,000+</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Executives Trained</p>
+                </div>
+                <div class="p-4 rounded-xl bg-navy-950/40 border border-navy-800">
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white font-serif-heading">98.4%</p>
+                    <p class="text-xs sm:text-sm text-slate-400 mt-1">Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOMAINS / CATEGORIES SUMMARY GRID -->
+    <section id="categories" class="py-16 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 font-serif-heading">Training & Development Domains</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 text-sm sm:text-base">Explore functional areas curated to align with modern institutional governance, compliance, and strategic leadership needs.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Category Card 1 -->
+                <div onclick="filterByCategory('Accounting')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">Accounting & Finance</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">183 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">Financial modeling, corporate auditing, IFRS compliance, budgeting, and risk mitigation strategies.</p>
+                </div>
+
+                <!-- Category Card 2 -->
+                <div onclick="filterByCategory('Management')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">Management & Leadership</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">181 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">Executive decision-making, strategic planning, change leadership, and organizational agility.</p>
+                </div>
+
+                <!-- Category Card 3 -->
+                <div onclick="filterByCategory('Human Resources')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">Human Resources (HR)</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">78 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">Talent development, HR analytics, SHRM alignment, workforce succession, and employee relations.</p>
+                </div>
+
+                <!-- Category Card 4 -->
+                <div onclick="filterByCategory('Oil')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-oil-well"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">Oil & Gas Technology</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">71 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">Petroleum engineering, offshore safety management, energy transition, and field operations.</p>
+                </div>
+
+                <!-- Category Card 5 -->
+                <div onclick="filterByCategory('Legal')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">Legal & Procurement</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">64 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">FIDIC contracts, commercial law, dispute resolution, tender management, and supply chain governance.</p>
+                </div>
+
+                <!-- Category Card 6 -->
+                <div onclick="filterByCategory('IT')" class="cursor-pointer group p-6 rounded-xl bg-slate-50 hover:bg-navy-900 transition-all duration-300 border border-slate-200 hover:border-navy-800 shadow-sm hover:shadow-xl">
+                    <div class="w-12 h-12 bg-navy-900 group-hover:bg-gold-500 text-gold-400 group-hover:text-navy-950 rounded-lg flex items-center justify-center text-xl mb-4 transition-colors">
+                        <i class="fa-solid fa-laptop-code"></i>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <h3 class="font-bold text-navy-900 group-hover:text-white text-lg transition-colors">IT & Computer Science</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-200 group-hover:bg-navy-800 text-slate-700 group-hover:text-gold-400">54 Courses</span>
+                    </div>
+                    <p class="text-xs text-slate-600 group-hover:text-slate-300 leading-relaxed">Cybersecurity frameworks, enterprise IT architecture, AI in governance, and cloud infrastructure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE COURSES SECTION -->
+    <section id="catalog" class="py-16 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-gold-600 text-xs font-bold uppercase tracking-wider">Featured Executive Schedule</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 font-serif-heading mt-1">Upcoming Specialized Programs</h2>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs font-medium">
+                    <button onclick="filterByCategory('All')" id="btn-All" class="category-btn active px-4 py-2 rounded-lg bg-navy-900 text-white shadow">All Domains</button>
+                    <button onclick="filterByCategory('Accounting')" id="btn-Accounting" class="category-btn px-4 py-2 rounded-lg bg-white text-slate-700 border hover:bg-slate-200">Finance</button>
+                    <button onclick="filterByCategory('Management')" id="btn-Management" class="category-btn px-4 py-2 rounded-lg bg-white text-slate-700 border hover:bg-slate-200">Leadership</button>
+                    <button onclick="filterByCategory('Human Resources')" id="btn-Human Resources" class="category-btn px-4 py-2 rounded-lg bg-white text-slate-700 border hover:bg-slate-200">HR</button>
+                    <button onclick="filterByCategory('Oil')" id="btn-Oil" class="category-btn px-4 py-2 rounded-lg bg-white text-slate-700 border hover:bg-slate-200">Oil & Gas</button>
+                    <button onclick="filterByCategory('Legal')" id="btn-Legal" class="category-btn px-4 py-2 rounded-lg bg-white text-slate-700 border hover:bg-slate-200">Legal</button>
+                </div>
+            </div>
+
+            <!-- DYNAMIC COURSE GRID -->
+            <div id="courseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Courses injected via JavaScript -->
+            </div>
+
+            <!-- EMPTY RESULTS PLACEHOLDER -->
+            <div id="noResults" class="hidden text-center py-16 bg-white rounded-2xl border border-slate-200">
+                <i class="fa-solid fa-folder-open text-4xl text-slate-300 mb-3"></i>
+                <h3 class="text-lg font-bold text-slate-700">No matching programs found</h3>
+                <p class="text-slate-500 text-sm mt-1">Try adjusting your keyword or clearing filters.</p>
+                <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-navy-900 text-white rounded-lg text-xs font-semibold">Reset Search Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- GLOBAL TRAINING DESTINATIONS -->
+    <section id="destinations" class="py-16 bg-white border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold-600 text-xs font-bold uppercase tracking-wider">International Hubs</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 font-serif-heading mt-1">Global Executive Destinations</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-600 text-sm">Attend top-tier physical sessions in prestigious 5-star venues across key international financial and strategic centers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- London -->
+                <div onclick="quickLocationFilter('London')" class="group relative rounded-xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer h-72">
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=600&q=80" alt="London Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="bg-gold-500 text-navy-950 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Global HQ</span>
+                        <h3 class="text-xl font-bold text-white mt-1">London, UK</h3>
+                        <p class="text-xs text-slate-300 flex items-center gap-1 mt-1"><i class="fa-solid fa-hotel text-gold-400"></i> Mayfair & City Venues</p>
+                    </div>
+                </div>
+
+                <!-- Dubai -->
+                <div onclick="quickLocationFilter('Dubai')" class="group relative rounded-xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer h-72">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubai Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="bg-navy-800 text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase">MENA Regional Hub</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Dubai, UAE</h3>
+                        <p class="text-xs text-slate-300 flex items-center gap-1 mt-1"><i class="fa-solid fa-hotel text-gold-400"></i> Downtown Executive Suites</p>
+                    </div>
+                </div>
+
+                <!-- Riyadh -->
+                <div onclick="quickLocationFilter('Riyadh')" class="group relative rounded-xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer h-72">
+                    <img src="https://images.unsplash.com/photo-1586724237569-f3d0c1dee8c6?auto=format&fit=crop&w=600&q=80" alt="Riyadh Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="bg-navy-800 text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase">Vision 2030 Partner</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Riyadh, KSA</h3>
+                        <p class="text-xs text-slate-300 flex items-center gap-1 mt-1"><i class="fa-solid fa-hotel text-gold-400"></i> KAFD Executive Towers</p>
+                    </div>
+                </div>
+
+                <!-- Paris -->
+                <div onclick="quickLocationFilter('Paris')" class="group relative rounded-xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer h-72">
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Paris Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5">
+                        <span class="bg-navy-800 text-gold-400 text-[10px] font-bold px-2 py-0.5 rounded uppercase">European Center</span>
+                        <h3 class="text-xl font-bold text-white mt-1">Paris, France</h3>
+                        <p class="text-xs text-slate-300 flex items-center gap-1 mt-1"><i class="fa-solid fa-hotel text-gold-400"></i> La Défense Business District</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Cities List -->
+            <div class="mt-8 pt-6 border-t border-slate-100 flex flex-wrap justify-center items-center gap-4 text-xs font-semibold text-slate-600">
+                <span class="text-slate-400">Other Training Hubs:</span>
+                <span class="bg-slate-100 px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Jeddah</span>
+                <span class="bg-slate-100 px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Amsterdam</span>
+                <span class="bg-slate-100 px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Singapore</span>
+                <span class="bg-slate-100 px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Kuala Lumpur</span>
+                <span class="bg-slate-100 px-3 py-1.5 rounded-full"><i class="fa-solid fa-location-dot text-gold-500 mr-1"></i> Istanbul</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACCREDITATIONS & QUALITY FRAMEWORKS -->
+    <section id="accreditations" class="py-16 bg-navy-950 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Quality Guarantees</span>
+                <h2 class="text-2xl sm:text-3xl font-bold font-serif-heading mt-1">Accreditations & Frameworks</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto my-3 rounded-full"></div>
+                <p class="text-slate-400 text-sm">GPC diplomas and certificates are backed by international standardization bodies and globally recognized professional institutes.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Accreditation item 1 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">ISO</div>
+                    <h4 class="font-bold text-sm text-white">ISO 9001:2015</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Quality Management System</p>
+                </div>
+                <!-- Accreditation item 2 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">CPD</div>
+                    <h4 class="font-bold text-sm text-white">CPD Certified</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Continuing Professional Dev.</p>
+                </div>
+                <!-- Accreditation item 3 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">PMI</div>
+                    <h4 class="font-bold text-sm text-white">PMI Aligned</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Project Management PDUs</p>
+                </div>
+                <!-- Accreditation item 4 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">SHRM</div>
+                    <h4 class="font-bold text-sm text-white">SHRM Provider</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Recertification Credits</p>
+                </div>
+                <!-- Accreditation item 5 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">CMI</div>
+                    <h4 class="font-bold text-sm text-white">CMI Approved</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Chartered Management Inst.</p>
+                </div>
+                <!-- Accreditation item 6 -->
+                <div class="p-5 rounded-xl bg-navy-900 border border-navy-800 text-center hover:border-gold-500/50 transition">
+                    <div class="w-12 h-12 bg-navy-800 text-gold-400 rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-lg">45K</div>
+                    <h4 class="font-bold text-sm text-white">ISO 45001</h4>
+                    <p class="text-[11px] text-slate-400 mt-1">Occupational Health & Safety</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IN-HOUSE TRAINING & CONSULTING SECTION -->
+    <section id="consulting" class="py-16 bg-gradient-to-r from-navy-900 to-navy-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-wider">Tailored Corporate Solutions</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold font-serif-heading mt-2 leading-tight">Bespoke In-House Training & Executive Consulting</h2>
+                    <p class="text-slate-300 text-sm sm:text-base mt-4 leading-relaxed">
+                        Need customized capability building for your organization? We deliver tailor-made executive training directly at your corporate headquarters or selected retreats worldwide.
+                    </p>
+
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Custom Curriculum Design</h4>
+                                <p class="text-xs text-slate-400">Contextualized case studies focused directly on your organizational challenges.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Organizational Gap Diagnostics</h4>
+                                <p class="text-xs text-slate-400">Pre-training competency assessments to quantify skill gaps before program launch.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-gold-500/20 text-gold-400 flex items-center justify-center shrink-0 mt-0.5">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm">Cost-Effective Group Packages</h4>
+                                <p class="text-xs text-slate-400">Significant volume pricing discounts for team sizes exceeding 8 delegates.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <button onclick="openModal('Custom In-House Training Consultation')" class="bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold px-6 py-3 rounded-xl text-sm transition shadow-lg">
+                            Request Corporate Proposal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Consulting Highlights Card / Form snippet -->
+                <div class="bg-navy-950 p-6 sm:p-8 rounded-2xl border border-navy-700 shadow-2xl">
+                    <h3 class="text-xl font-bold font-serif-heading text-white mb-2">Request an In-House Quote</h3>
+                    <p class="text-slate-400 text-xs mb-6">Our corporate learning advisors respond within 24 business hours.</p>
+
+                    <form onsubmit="handleInHouseSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Organization Name *</label>
+                            <input type="text" required placeholder="e.g., Aramco / Petroleum Corp" class="w-full px-3.5 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Target Delegate Count</label>
+                                <select class="w-full px-3.5 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500">
+                                    <option>5 - 10 Delegates</option>
+                                    <option>11 - 25 Delegates</option>
+                                    <option>25+ Delegates</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-medium text-slate-300 mb-1">Preferred Location</label>
+                                <input type="text" placeholder="e.g., Riyadh HQ or London" class="w-full px-3.5 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Work Email *</label>
+                            <input type="email" required placeholder="executive@company.com" class="w-full px-3.5 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Training Objective</label>
+                            <textarea rows="3" placeholder="Briefly detail required learning outcomes..." class="w-full px-3.5 py-2.5 bg-navy-900 border border-navy-700 rounded-lg text-sm text-white focus:outline-none focus:border-gold-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold rounded-lg text-sm transition">
+                            Submit Advisory Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & TRUSTED CLIENTS -->
+    <section id="testimonials" class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold-600 text-xs font-bold uppercase tracking-wider">Executive Feedback</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-navy-900 font-serif-heading mt-1">Trusted by Global Leaders</h2>
+                <div class="w-16 h-1 bg-gold-500 mx-auto my-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="p-6 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "The London Finance & Budgeting Masterclass delivered actionable insight into IFRS updates. The faculty was top-tier with real energy sector experience."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">AH</div>
+                        <div>
+                            <p class="font-bold text-navy-900 text-sm">Abdullah H.</p>
+                            <p class="text-xs text-slate-500">Senior Financial Controller, Riyadh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="p-6 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Extremely structured FIDIC Contracts workshop in Dubai. GPC's coordination was seamless from venue logistics to course materials."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">EL</div>
+                        <div>
+                            <p class="font-bold text-navy-900 text-sm">Elena L.</p>
+                            <p class="text-xs text-slate-500">Head of Legal Operations, Rotterdam</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="p-6 rounded-xl bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-amber-400 gap-1 text-xs mb-3">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm italic leading-relaxed">
+                            "Our custom in-house HR Analytics program transformed how our talent team reports to the board. Outstanding corporate partner."
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-navy-900 text-gold-400 font-bold flex items-center justify-center text-sm">KM</div>
+                        <div>
+                            <p class="font-bold text-navy-900 text-sm">Kassim M.</p>
+                            <p class="text-xs text-slate-500">VP Human Resources, Dubai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-navy-950 text-slate-300 pt-16 pb-8 border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2">
+                    <a href="#" class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-gold-500 text-navy-950 rounded flex items-center justify-center font-bold text-xl">GPC</div>
+                        <span class="text-lg font-bold text-white font-serif-heading">Global Premier Centre</span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-4 max-w-sm">
+                        Global Premier Centre (GPC) is a leading international provider of executive education, professional development, and corporate capacity building headquartered in London.
+                    </p>
+                    <div class="text-xs text-slate-400 space-y-1">
+                        <p><strong class="text-slate-200">London HQ:</strong> 15 Hanover Square, Mayfair, London W1S 1JH, UK</p>
+                        <p><strong class="text-slate-200">Dubai Regional Office:</strong> Boulevard Plaza Tower 1, Downtown Dubai, UAE</p>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Navigation</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#hero" class="hover:text-gold-400 transition">Home</a></li>
+                        <li><a href="#categories" class="hover:text-gold-400 transition">Course Domains</a></li>
+                        <li><a href="#destinations" class="hover:text-gold-400 transition">Training Hubs</a></li>
+                        <li><a href="#consulting" class="hover:text-gold-400 transition">In-House Solutions</a></li>
+                        <li><a href="#accreditations" class="hover:text-gold-400 transition">Quality Standards</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Domains -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Popular Domains</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#catalog" onclick="filterByCategory('Accounting')" class="hover:text-gold-400 transition">Finance & Budgeting</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('Management')" class="hover:text-gold-400 transition">Strategic Management</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('Oil')" class="hover:text-gold-400 transition">Oil & Gas Engineering</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('Legal')" class="hover:text-gold-400 transition">Procurement & FIDIC</a></li>
+                        <li><a href="#catalog" onclick="filterByCategory('IT')" class="hover:text-gold-400 transition">IT Governance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Newsletter -->
+                <div>
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-navy-800 pb-2">Executive Insights</h4>
+                    <p class="text-xs text-slate-400 mb-3">Subscribe for upcoming course schedules and executive briefs.</p>
+                    <form onsubmit="handleNewsletter(event)" class="space-y-2">
+                        <input type="email" required placeholder="Enter your work email" class="w-full px-3 py-2 bg-navy-900 border border-navy-800 rounded text-xs text-white placeholder-slate-500 focus:outline-none focus:border-gold-500">
+                        <button type="submit" class="w-full bg-gold-500 hover:bg-gold-600 text-navy-950 font-bold py-2 rounded text-xs transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- COPYRIGHT BAR -->
+            <div class="pt-8 border-t border-navy-800/80 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+                <p>&copy; 2026 Global Premier Centre (GPC) Executive Education. All rights reserved.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-400">Terms of Service</a>
+                    <a href="#" class="hover:text-slate-400">Cookie Preferences</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE REGISTRATION & INQUIRY MODAL -->
+    <div id="modalOverlay" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200">
+            <!-- Modal Header -->
+            <div class="bg-navy-900 text-white p-6 rounded-t-2xl flex justify-between items-center">
+                <div>
+                    <h3 id="modalTitle" class="text-lg font-bold font-serif-heading">Course Registration & Inquiry</h3>
+                    <p class="text-xs text-slate-300 mt-0.5">Global Premier Centre Executive Advisory</p>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-white text-xl p-1 focus:outline-none">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form -->
+            <form onsubmit="handleRegistrationSubmit(event)" class="p-6 space-y-4">
+                <input type="hidden" id="selectedCourseTitle" name="course_title">
+                
+                <div id="courseInfoBanner" class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl hidden">
+                    <p class="text-xs font-bold text-amber-900" id="selectedCourseName">Selected Course</p>
+                    <p class="text-[11px] text-amber-800" id="selectedCourseDetails">Location & Date details</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Full Name *</label>
+                        <input type="text" required placeholder="e.g. Dr. Sarah Jenkins" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Work Email *</label>
+                        <input type="email" required placeholder="sarah.jenkins@company.com" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Phone Number (with Country Code) *</label>
+                        <input type="tel" required placeholder="+44 7000 000000" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Organization / Sponsor</label>
+                        <input type="text" placeholder="Ministry / Private Corporation" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Preferred City Destination</label>
+                        <select id="modalCitySelect" class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                            <option>London (UK)</option>
+                            <option>Dubai (UAE)</option>
+                            <option>Riyadh (KSA)</option>
+                            <option>Paris (France)</option>
+                            <option>Singapore</option>
+                            <option>In-House Corporate Site</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 mb-1">Estimated Delegates</label>
+                        <select class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900">
+                            <option>1 Delegate</option>
+                            <option>2 - 4 Delegates</option>
+                            <option>5+ Delegates (Group Rate)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Additional Requirements / Inquiry</label>
+                    <textarea rows="2" placeholder="Mention visa assistance, accommodation needs, or specific learning goals..." class="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-300 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-navy-900"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-navy-950 font-bold rounded-xl text-sm transition shadow-md">
+                        Submit Registration Request
+                    </button>
+                    <p class="text-[11px] text-slate-400 text-center mt-2">No payment required immediately. Formal invoice and prospectus will be sent via email.</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-navy-900 text-white px-5 py-3 rounded-xl shadow-2xl border border-gold-500/40 hidden z-50 items-center gap-3">
+        <i class="fa-solid fa-circle-check text-gold-400 text-lg"></i>
+        <div>
+            <p id="toastText" class="text-xs font-semibold">Action completed successfully.</p>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Central Shared Form Submission Processor
+function recordInquiryToAdmin(inquiryData) {
+    const existing = JSON.parse(localStorage.getItem('gpc_admin_inquiries') || '[]');
+    const now = new Date();
+    const formattedTime = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+    
+    const newEntry = {
+        id: 'inq_' + Date.now(),
+        type: inquiryData.type || 'General Inquiry',
+        name: inquiryData.name || 'Anonymous Delegate',
+        email: inquiryData.email || 'N/A',
+        phone: inquiryData.phone || 'N/A',
+        org: inquiryData.org || 'Independent',
+        city: inquiryData.city || 'Not Specified',
+        course: inquiryData.course || '',
+        details: inquiryData.details || '',
+        time: formattedTime
+    };
+
+    existing.unshift(newEntry);
+    localStorage.setItem('gpc_admin_inquiries', JSON.stringify(existing));
+}
+        // MASTER COURSES DATA MODEL
+        const coursesData = [
+            {
+                id: 'c1',
+                title: 'Advanced Financial Analysis, Budgeting & Forecasting',
+                category: 'Accounting',
+                location: 'London',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '12 - 16 Nov 2026',
+                fee: '$4,950',
+                rating: '4.9',
+                desc: 'Comprehensive financial modeling, variance analysis, risk assessment, and modern capital budgeting techniques.'
+            },
+            {
+                id: 'c2',
+                title: 'Executive Leadership, Governance & Strategic Management',
+                category: 'Management',
+                location: 'Dubai',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '24 - 28 Nov 2026',
+                fee: '$4,800',
+                rating: '4.8',
+                desc: 'Strategic decision-making frameworks, executive presence, corporate governance, and digital transformation.'
+            },
+            {
+                id: 'c3',
+                title: 'FIDIC Contracts, Claims & Dispute Resolution Masterclass',
+                category: 'Legal',
+                location: 'Riyadh',
+                duration: '10 Days',
+                cpd: '60 CPD Credits',
+                dates: '01 - 10 Dec 2026',
+                fee: '$8,500',
+                rating: '5.0',
+                desc: 'In-depth analysis of Rainbow Suite contracts, claim quantification, arbitration mechanisms, and risk allocation.'
+            },
+            {
+                id: 'c4',
+                title: 'Petroleum Engineering & Offshore Field Management',
+                category: 'Oil',
+                location: 'London',
+                duration: '5 Days',
+                cpd: '35 CPD Credits',
+                dates: '07 - 11 Dec 2026',
+                fee: '$5,200',
+                rating: '4.9',
+                desc: 'Modern reservoir evaluation, offshore platform safety protocols, and operational optimization in upstream energy.'
+            },
+            {
+                id: 'c5',
+                title: 'Strategic Human Resources Management (SHRM Aligned)',
+                category: 'Human Resources',
+                location: 'Paris',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '15 - 19 Dec 2026',
+                fee: '$4,750',
+                rating: '4.7',
+                desc: 'Building strategic workforce plans, driving performance culture, talent retention, and HR digital metrics.'
+            },
+            {
+                id: 'c6',
+                title: 'Enterprise Cybersecurity & Executive IT Governance',
+                category: 'IT',
+                location: 'Singapore',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '18 - 22 Jan 2027',
+                fee: '$5,100',
+                rating: '4.9',
+                desc: 'Mitigating enterprise cyber risks, ISO 27001 implementation, AI security frameworks, and disaster recovery.'
+            },
+            {
+                id: 'c7',
+                title: 'Public Sector Governance, Policy & Risk Management',
+                category: 'Management',
+                location: 'Riyadh',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '25 - 29 Jan 2027',
+                fee: '$4,900',
+                rating: '4.8',
+                desc: 'Institutional transformation, policy evaluation, public accountability, and Vision 2030 strategic alignment.'
+            },
+            {
+                id: 'c8',
+                title: 'IFRS & International Accounting Standards Update',
+                category: 'Accounting',
+                location: 'Dubai',
+                duration: '5 Days',
+                cpd: '30 CPD Credits',
+                dates: '08 - 12 Feb 2027',
+                fee: '$4,600',
+                rating: '4.8',
+                desc: 'Mastering recent changes in IFRS regulations, financial reporting standards, and corporate tax compliance.'
+            }
+        ];
+
+        let currentCategory = 'All';
+
+        // INITIALIZE RENDER ON LOAD
+        window.onload = function() {
+            renderCourses(coursesData);
+        };
+
+        // RENDER COURSE CARDS DYNAMICALLY
+        function renderCourses(courses) {
+            const grid = document.getElementById('courseGrid');
+            const noResults = document.getElementById('noResults');
+
+            if (!courses || courses.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = courses.map(course => `
+                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                            <span class="text-[11px] font-bold px-2.5 py-1 rounded-full bg-navy-50 text-navy-800 border border-navy-100 uppercase tracking-wide">
+                                ${course.category}
+                            </span>
+                            <span class="text-xs font-semibold text-slate-500 flex items-center gap-1">
+                                <i class="fa-solid fa-star text-amber-400"></i> ${course.rating}
+                            </span>
+                        </div>
+
+                        <h3 class="font-bold text-navy-900 text-lg leading-snug group-hover:text-gold-600 transition-colors mb-2">
+                            ${course.title}
+                        </h3>
+
+                        <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-4">
+                            ${course.desc}
+                        </p>
+
+                        <div class="space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600">
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-gold-500"></i> <strong>Location:</strong> ${course.location}</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-gold-500"></i> <strong>Duration:</strong> ${course.duration}</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-calendar-days text-gold-500"></i> <strong>Next Date:</strong> ${course.dates}</span>
+                                <span class="flex items-center gap-1.5"><i class="fa-solid fa-certificate text-gold-500"></i> ${course.cpd}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 px-6 py-4 border-t border-slate-100 flex items-center justify-between">
+                        <div>
+                            <span class="text-[10px] text-slate-400 block uppercase font-medium">Investment</span>
+                            <span class="text-base font-bold text-navy-900">${course.fee}</span>
+                        </div>
+                        <button onclick="registerForCourse('${course.id}')" class="bg-navy-900 hover:bg-gold-500 hover:text-navy-950 text-white text-xs font-bold px-4 py-2.5 rounded-lg transition-colors">
+                            Register & Details
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // FILTER COURSES VIA SEARCH INPUT AND CATEGORIES
+        function filterCourses() {
+            const query = document.getElementById('heroSearchInput').value.toLowerCase();
+            const location = document.getElementById('heroLocationSelect').value;
+
+            const filtered = coursesData.filter(course => {
+                const matchesCategory = (currentCategory === 'All') || course.category.toLowerCase().includes(currentCategory.toLowerCase());
+                const matchesSearch = course.title.toLowerCase().includes(query) || course.desc.toLowerCase().includes(query) || course.category.toLowerCase().includes(query);
+                const matchesLocation = location === '' || course.location.toLowerCase() === location.toLowerCase();
+
+                return matchesCategory && matchesSearch && matchesLocation;
+            });
+
+            renderCourses(filtered);
+        }
+
+        // FILTER BY CATEGORY BUTTONS
+        function filterByCategory(category) {
+            currentCategory = category;
+
+            // Update active state on buttons
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-navy-900', 'text-white', 'shadow');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            const activeBtn = document.getElementById(`btn-${category}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-slate-700');
+                activeBtn.classList.add('bg-navy-900', 'text-white', 'shadow');
+            }
+
+            filterCourses();
+        }
+
+        // QUICK SEARCH HELPER
+        function quickSearch(keyword) {
+            document.getElementById('heroSearchInput').value = keyword;
+            filterCourses();
+            scrollToCatalog();
+        }
+
+        // QUICK LOCATION FILTER HELPER
+        function quickLocationFilter(loc) {
+            document.getElementById('heroLocationSelect').value = loc;
+            filterCourses();
+            scrollToCatalog();
+        }
+
+        // RESET FILTERS
+        function resetFilters() {
+            document.getElementById('heroSearchInput').value = '';
+            document.getElementById('heroLocationSelect').value = '';
+            currentCategory = 'All';
+            filterByCategory('All');
+        }
+
+        // SCROLL TO CATALOG
+        function scrollToCatalog() {
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // MOBILE MENU TOGGLE
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // MODAL HANDLERS
+        function openModal(title, courseDetails = null) {
+            document.getElementById('modalTitle').innerText = title || 'Course Registration & Inquiry';
+            const overlay = document.getElementById('modalOverlay');
+            const infoBanner = document.getElementById('courseInfoBanner');
+
+            if (courseDetails) {
+                infoBanner.classList.remove('hidden');
+                document.getElementById('selectedCourseName').innerText = courseDetails.title;
+                document.getElementById('selectedCourseDetails').innerText = `Location: ${courseDetails.location} | Date: ${courseDetails.dates} | Fee: ${courseDetails.fee}`;
+                document.getElementById('selectedCourseTitle').value = courseDetails.title;
+                document.getElementById('modalCitySelect').value = courseDetails.location;
+            } else {
+                infoBanner.classList.add('hidden');
+                document.getElementById('selectedCourseTitle').value = '';
+            }
+
+            overlay.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.add('hidden');
+        }
+
+        function registerForCourse(courseId) {
+            const course = coursesData.find(c => c.id === courseId);
+            if (course) {
+                openModal(`Register: ${course.title}`, course);
+            }
+        }
+
+        // FORM SUBMISSION HANDLERS
+function handleRegistrationSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    recordInquiryToAdmin({
+        type: 'Course Seat Reservation',
+        name: form.querySelector('input[placeholder*="Jenkins"]').value,
+        email: form.querySelector('input[type="email"]').value,
+        phone: form.querySelector('input[type="tel"]').value,
+        org: form.querySelector('input[placeholder*="Ministry"]').value,
+        city: document.getElementById('modalCitySelect').value,
+        course: document.getElementById('selectedCourseTitle').value,
+        details: form.querySelector('textarea').value
+    });
+
+    closeModal();
+    showToast("Registration request submitted directly to Admin!");
+    form.reset();
+}
+
+function handleInHouseSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    recordInquiryToAdmin({
+        type: 'In-House Training Proposal',
+        name: 'Corporate Contact',
+        email: form.querySelector('input[type="email"]').value,
+        phone: 'N/A',
+        org: form.querySelector('input[placeholder*="Aramco"]').value,
+        city: form.querySelector('input[placeholder*="Riyadh"]').value,
+        details: form.querySelector('textarea').value
+    });
+
+    form.reset();
+    showToast("In-house proposal request sent! Expect a detailed quote within 24 hours.");
+}
+
+        function handleNewsletter(e) {
+            e.preventDefault();
+            e.target.reset();
+            showToast("Thank you for subscribing to GPC Executive Briefings!");
+        }
+
+        // TOAST DISPLAY
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const text = document.getElementById('toastText');
+            text.innerText = msg;
+            toast.classList.remove('hidden');
+            toast.classList.add('flex');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+                toast.classList.remove('flex');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
